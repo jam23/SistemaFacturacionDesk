@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaFacturacionDesk.Cuenta
+namespace SistemaFacturacionDesk
 {
     public sealed class User
     {
@@ -22,8 +22,16 @@ namespace SistemaFacturacionDesk.Cuenta
             {
                 if (instance == null)
                 {
-                    var user = new User();
-                    user.IdUsuario = UserId;
+                    var user = new User();                    
+                    
+                    using (EntitiesFACTURACION db = new EntitiesFACTURACION())
+                    {
+                        var v = db.VENDEDORES.Find(UserId); // Buscar el usuario que se esta logeando.
+
+                        user.IdUsuario = v.id;
+                        user.IsAdmin = v.IsAdmin;
+                    }
+
                     instance = user;
                 }
             }
@@ -31,6 +39,7 @@ namespace SistemaFacturacionDesk.Cuenta
         #endregion
 
         public int IdUsuario;
+        public bool IsAdmin;
         public static User UsuarioLogeado
         {
             get

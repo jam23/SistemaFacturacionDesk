@@ -24,9 +24,10 @@ namespace SistemaFacturacionDesk
         public string apellido1 { get; set; }
         public string apellido2 { get; set; }
         public int porcientoComision { get; set; }
-        public string contraseña { get; set; }
         public string nombreUsuario { get; set; }
         public string estado { get; set; }
+        public string contrasena { get; set; }
+        public bool IsAdmin { get; set; }
     
         public virtual ICollection<FACTURAS> FACTURAS { get; set; }
     }

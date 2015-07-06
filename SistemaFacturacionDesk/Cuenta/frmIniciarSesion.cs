@@ -14,8 +14,8 @@ namespace SistemaFacturacionDesk.Cuenta
     {
         EntitiesFACTURACION db = new EntitiesFACTURACION();
         public frmIniciarSesion()
-        {            
-            InitializeComponent();            
+        {
+            InitializeComponent();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -34,7 +34,7 @@ namespace SistemaFacturacionDesk.Cuenta
             VENDEDORES vendedor = null;
             try
             {
-                vendedor = db.VENDEDORES.Where(v => v.nombreUsuario.Equals(txtNombreUsuario.Text) && v.contraseña.Equals(txtContrasena.Text)).FirstOrDefault();
+                vendedor = db.VENDEDORES.Where(v => v.nombreUsuario.Equals(txtNombreUsuario.Text) && v.contrasena.Equals(txtContrasena.Text)).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -56,6 +56,12 @@ namespace SistemaFacturacionDesk.Cuenta
             {
                 User.IniciarSesion(vendedor.id);
             }
+
+        
+                this.Visible = false;
+                frmMenu frmMenu = new frmMenu();
+                frmMenu.Visible = true;
+          
 
 
         }

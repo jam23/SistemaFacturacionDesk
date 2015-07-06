@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FACTURACIONModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FACTURACIONModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="FACTURACIONModelStoreContainer">
           <EntitySet Name="ARTICULOS" EntityType="FACTURACIONModel.Store.ARTICULOS" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CATEGORIA" EntityType="FACTURACIONModel.Store.CATEGORIA" store:Type="Tables" Schema="dbo" />
@@ -112,7 +112,8 @@
           <Property Name="apellido1" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="apellido2" Type="varchar" MaxLength="50" />
           <Property Name="porcientoComision" Type="int" Nullable="false" />
-          <Property Name="contraseña" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="contrasena" Type="varchar" Nullable="false" MaxLength="500" />
+          <Property Name="IsAdmin" Type="bit" Nullable="false" />
           <Property Name="nombreUsuario" Type="varchar" Nullable="false" MaxLength="100" />
           <Property Name="estado" Type="char" Nullable="false" MaxLength="1" />
         </EntityType>
@@ -188,8 +189,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FACTURACIONModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -311,10 +311,11 @@
           <Property Name="apellido1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="apellido2" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="porcientoComision" Type="Int32" Nullable="false" />
-          <Property Name="contraseña" Type="String" Nullable="false" MaxLength="500" Unicode="false" FixedLength="false" />
           <Property Name="nombreUsuario" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
           <Property Name="estado" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
           <NavigationProperty Name="FACTURAS" Relationship="FACTURACIONModel.FK_VENDEDOR" FromRole="VENDEDORES" ToRole="FACTURAS" />
+          <Property Type="String" Name="contrasena" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="IsAdmin" Nullable="false" />
         </EntityType>
         <Association Name="FK_ARTICULOS">
           <End Role="ARTICULOS" Type="FACTURACIONModel.ARTICULOS" Multiplicity="1" />
@@ -467,12 +468,13 @@
           <EntitySetMapping Name="VENDEDORES">
             <EntityTypeMapping TypeName="FACTURACIONModel.VENDEDORES">
               <MappingFragment StoreEntitySet="VENDEDORES">
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="contrasena" ColumnName="contrasena" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="nombres" ColumnName="nombres" />
                 <ScalarProperty Name="apellido1" ColumnName="apellido1" />
                 <ScalarProperty Name="apellido2" ColumnName="apellido2" />
                 <ScalarProperty Name="porcientoComision" ColumnName="porcientoComision" />
-                <ScalarProperty Name="contraseña" ColumnName="contraseña" />
                 <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
                 <ScalarProperty Name="estado" ColumnName="estado" />
               </MappingFragment>

@@ -24,6 +24,14 @@ namespace SistemaFacturacionDesk
         {
             Mensaje(form, text, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        public static void MensajeInformacion(this Form form, string text, string caption = "")
+        {
+            Mensaje(form, text, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+       
+        
+        
         #endregion
 
         #region Cuenta
