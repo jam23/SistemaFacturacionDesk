@@ -16,7 +16,7 @@ namespace SistemaFacturacionDesk
         {
             InitializeComponent();
         }
-
+        EntitiesFACTURACION db = new EntitiesFACTURACION();
         private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
         {
             frmMenu frmMenu = new frmMenu();
@@ -26,8 +26,35 @@ namespace SistemaFacturacionDesk
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
-           
-        }      
+            costoUnitarioTextBox.ValidarContenido(Validaciones.Alfanumerico);
+            estadoComboBox.DataSource = Utilidades.Estado;
+            // TODO: This line of code loads data into the 'fACTURACIONDataSet.CATEGORIA' table. You can move, or remove it, as needed.
+            this.cATEGORIATableAdapter.Fill(this.fACTURACIONDataSet.CATEGORIA);
+            // TODO: This line of code loads data into the 'fACTURACIONDataSet.ARTICULOS' table. You can move, or remove it, as needed.
+            this.aRTICULOSTableAdapter.Fill(this.fACTURACIONDataSet.ARTICULOS);
+            
+   
+            
+          
+
+        }
+
+        private void aRTICULOSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.aRTICULOSBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+     
+
+
 
     }
 }

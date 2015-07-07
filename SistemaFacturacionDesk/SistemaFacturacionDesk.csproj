@@ -88,6 +88,10 @@
     <Compile Include="DETALLE_FACTURA.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="FACTURACIONDataSet.cs">
+      <DependentUpon>FACTURACIONDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FACTURACIONDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -244,11 +248,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FACTURACION.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="FACTURACION_log.ldf">
       <DependentUpon>FACTURACION.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Articulos%281%29.png" />
     <Content Include="Images\Articulos.png" />
