@@ -52,6 +52,7 @@
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -70,6 +71,18 @@
   <ItemGroup>
     <Compile Include="ARTICULOS.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaArticulo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaArticulo.Designer.cs">
+      <DependentUpon>frmBusquedaArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Busquedas\frmBusquedaCliente.Designer.cs">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="CATEGORIA.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
@@ -165,6 +178,12 @@
     <Compile Include="VENDEDORES.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Busquedas\frmBusquedaArticulo.resx">
+      <DependentUpon>frmBusquedaArticulo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Busquedas\frmBusquedaCliente.resx">
+      <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cuenta\frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.cs</DependentUpon>
     </EmbeddedResource>

@@ -17,6 +17,12 @@ namespace SistemaFacturacionDesk
             InitializeComponent();
         }
 
+        private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
+            this.Dispose();
+        }
         private void frmCategoria_Load(object sender, EventArgs e)
         {
             estadoComboBox.DataSource = Utilidades.Estado;
@@ -76,6 +82,13 @@ namespace SistemaFacturacionDesk
         {
             txtDescripcion.Clear();
             fillByDescripcion(sender, e);
+        }
+
+        private void frmCategoria_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
+            this.Dispose();
         }
     }
 }

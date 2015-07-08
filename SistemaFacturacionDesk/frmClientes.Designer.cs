@@ -37,12 +37,24 @@
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label estadoLabel;
             System.Windows.Forms.Label telefonoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cLIENTESDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreComercialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rNCCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuentaContableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.rNC_CEDTextBox = new System.Windows.Forms.TextBox();
+            this.telefonoTextBox = new System.Windows.Forms.TextBox();
             this.estadoComboBox = new System.Windows.Forms.ComboBox();
             this.idLabel1 = new System.Windows.Forms.Label();
             this.nombreComercialTextBox = new System.Windows.Forms.TextBox();
@@ -67,18 +79,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cLIENTESBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.telefonoTextBox = new System.Windows.Forms.TextBox();
-            this.rNC_CEDTextBox = new System.Windows.Forms.TextBox();
-            this.cLIENTESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreComercialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.razonSocialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rNCCEDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cuentaContableDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cLIENTESTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.CLIENTESTableAdapter();
             this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
             idLabel = new System.Windows.Forms.Label();
@@ -91,12 +91,12 @@
             telefonoLabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingNavigator)).BeginInit();
             this.cLIENTESBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // idLabel
@@ -195,20 +195,20 @@
             this.cLIENTESDataGridView.AllowUserToAddRows = false;
             this.cLIENTESDataGridView.AllowUserToDeleteRows = false;
             this.cLIENTESDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.cLIENTESDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.cLIENTESDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.cLIENTESDataGridView.AutoGenerateColumns = false;
             this.cLIENTESDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.cLIENTESDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.cLIENTESDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.cLIENTESDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.cLIENTESDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.cLIENTESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.cLIENTESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -227,6 +227,72 @@
             this.cLIENTESDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.cLIENTESDataGridView.Size = new System.Drawing.Size(903, 269);
             this.cLIENTESDataGridView.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nombreComercialDataGridViewTextBoxColumn
+            // 
+            this.nombreComercialDataGridViewTextBoxColumn.DataPropertyName = "nombreComercial";
+            this.nombreComercialDataGridViewTextBoxColumn.HeaderText = "Nombre Comercial";
+            this.nombreComercialDataGridViewTextBoxColumn.Name = "nombreComercialDataGridViewTextBoxColumn";
+            this.nombreComercialDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // razonSocialDataGridViewTextBoxColumn
+            // 
+            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "razonSocial";
+            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "Razon Social";
+            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
+            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // rNCCEDDataGridViewTextBoxColumn
+            // 
+            this.rNCCEDDataGridViewTextBoxColumn.DataPropertyName = "RNC_CED";
+            this.rNCCEDDataGridViewTextBoxColumn.HeaderText = "RNC/CED";
+            this.rNCCEDDataGridViewTextBoxColumn.Name = "rNCCEDDataGridViewTextBoxColumn";
+            this.rNCCEDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cuentaContableDataGridViewTextBoxColumn
+            // 
+            this.cuentaContableDataGridViewTextBoxColumn.DataPropertyName = "cuentaContable";
+            this.cuentaContableDataGridViewTextBoxColumn.HeaderText = "Cuenta Contable";
+            this.cuentaContableDataGridViewTextBoxColumn.Name = "cuentaContableDataGridViewTextBoxColumn";
+            this.cuentaContableDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // telefonoDataGridViewTextBoxColumn
+            // 
+            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
+            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
+            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
+            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cLIENTESBindingSource
+            // 
+            this.cLIENTESBindingSource.DataMember = "CLIENTES";
+            this.cLIENTESBindingSource.DataSource = this.fACTURACIONDataSet;
+            // 
+            // fACTURACIONDataSet
+            // 
+            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
+            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox1
             // 
@@ -253,6 +319,24 @@
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
+            // 
+            // rNC_CEDTextBox
+            // 
+            this.rNC_CEDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cLIENTESBindingSource, "RNC_CED", true));
+            this.rNC_CEDTextBox.Location = new System.Drawing.Point(166, 100);
+            this.rNC_CEDTextBox.MaxLength = 11;
+            this.rNC_CEDTextBox.Name = "rNC_CEDTextBox";
+            this.rNC_CEDTextBox.Size = new System.Drawing.Size(281, 23);
+            this.rNC_CEDTextBox.TabIndex = 17;
+            // 
+            // telefonoTextBox
+            // 
+            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cLIENTESBindingSource, "telefono", true));
+            this.telefonoTextBox.Location = new System.Drawing.Point(596, 41);
+            this.telefonoTextBox.MaxLength = 10;
+            this.telefonoTextBox.Name = "telefonoTextBox";
+            this.telefonoTextBox.Size = new System.Drawing.Size(257, 23);
+            this.telefonoTextBox.TabIndex = 16;
             // 
             // estadoComboBox
             // 
@@ -315,7 +399,7 @@
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(28, 35);
+            this.groupBox3.Location = new System.Drawing.Point(28, 41);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(909, 70);
             this.groupBox3.TabIndex = 23;
@@ -482,90 +566,6 @@
             this.cLIENTESBindingNavigatorSaveItem.Text = "Save Data";
             this.cLIENTESBindingNavigatorSaveItem.Click += new System.EventHandler(this.cLIENTESBindingNavigatorSaveItem_Click);
             // 
-            // telefonoTextBox
-            // 
-            this.telefonoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cLIENTESBindingSource, "telefono", true));
-            this.telefonoTextBox.Location = new System.Drawing.Point(596, 41);
-            this.telefonoTextBox.MaxLength = 10;
-            this.telefonoTextBox.Name = "telefonoTextBox";
-            this.telefonoTextBox.Size = new System.Drawing.Size(257, 23);
-            this.telefonoTextBox.TabIndex = 16;
-            // 
-            // rNC_CEDTextBox
-            // 
-            this.rNC_CEDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cLIENTESBindingSource, "RNC_CED", true));
-            this.rNC_CEDTextBox.Location = new System.Drawing.Point(166, 100);
-            this.rNC_CEDTextBox.MaxLength = 11;
-            this.rNC_CEDTextBox.Name = "rNC_CEDTextBox";
-            this.rNC_CEDTextBox.Size = new System.Drawing.Size(281, 23);
-            this.rNC_CEDTextBox.TabIndex = 17;
-            // 
-            // cLIENTESBindingSource
-            // 
-            this.cLIENTESBindingSource.DataMember = "CLIENTES";
-            this.cLIENTESBindingSource.DataSource = this.fACTURACIONDataSet;
-            // 
-            // fACTURACIONDataSet
-            // 
-            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
-            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nombreComercialDataGridViewTextBoxColumn
-            // 
-            this.nombreComercialDataGridViewTextBoxColumn.DataPropertyName = "nombreComercial";
-            this.nombreComercialDataGridViewTextBoxColumn.HeaderText = "Nombre Comercial";
-            this.nombreComercialDataGridViewTextBoxColumn.Name = "nombreComercialDataGridViewTextBoxColumn";
-            this.nombreComercialDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // razonSocialDataGridViewTextBoxColumn
-            // 
-            this.razonSocialDataGridViewTextBoxColumn.DataPropertyName = "razonSocial";
-            this.razonSocialDataGridViewTextBoxColumn.HeaderText = "Razon Social";
-            this.razonSocialDataGridViewTextBoxColumn.Name = "razonSocialDataGridViewTextBoxColumn";
-            this.razonSocialDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // rNCCEDDataGridViewTextBoxColumn
-            // 
-            this.rNCCEDDataGridViewTextBoxColumn.DataPropertyName = "RNC_CED";
-            this.rNCCEDDataGridViewTextBoxColumn.HeaderText = "RNC/CED";
-            this.rNCCEDDataGridViewTextBoxColumn.Name = "rNCCEDDataGridViewTextBoxColumn";
-            this.rNCCEDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cuentaContableDataGridViewTextBoxColumn
-            // 
-            this.cuentaContableDataGridViewTextBoxColumn.DataPropertyName = "cuentaContable";
-            this.cuentaContableDataGridViewTextBoxColumn.HeaderText = "Cuenta Contable";
-            this.cuentaContableDataGridViewTextBoxColumn.Name = "cuentaContableDataGridViewTextBoxColumn";
-            this.cuentaContableDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // telefonoDataGridViewTextBoxColumn
-            // 
-            this.telefonoDataGridViewTextBoxColumn.DataPropertyName = "telefono";
-            this.telefonoDataGridViewTextBoxColumn.HeaderText = "Teléfono";
-            this.telefonoDataGridViewTextBoxColumn.Name = "telefonoDataGridViewTextBoxColumn";
-            this.telefonoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // cLIENTESTableAdapter
             // 
             this.cLIENTESTableAdapter.ClearBeforeFill = true;
@@ -598,9 +598,12 @@
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Clientes";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmClientes_FormClosed);
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -608,8 +611,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingNavigator)).EndInit();
             this.cLIENTESBindingNavigator.ResumeLayout(false);
             this.cLIENTESBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -17,7 +17,7 @@ namespace SistemaFacturacionDesk
             InitializeComponent();
         }
 
-        private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
+        private void frmVendedores_FormClosed(object sender, FormClosedEventArgs e)
         {
             frmMenu frmMenu = new frmMenu();
             frmMenu.Visible = true;

@@ -38,6 +38,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnCategoria = new System.Windows.Forms.Button();
             this.gbMantenimientos.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -111,13 +112,14 @@
             // gbMantenimientos
             // 
             this.gbMantenimientos.Controls.Add(this.btnVendedores);
+            this.gbMantenimientos.Controls.Add(this.btnCategoria);
             this.gbMantenimientos.Controls.Add(this.btnArticulos);
             this.gbMantenimientos.Controls.Add(this.btnClientes);
             this.gbMantenimientos.Controls.Add(this.btnCondicionesPago);
             this.gbMantenimientos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMantenimientos.Location = new System.Drawing.Point(12, 145);
             this.gbMantenimientos.Name = "gbMantenimientos";
-            this.gbMantenimientos.Size = new System.Drawing.Size(601, 142);
+            this.gbMantenimientos.Size = new System.Drawing.Size(601, 265);
             this.gbMantenimientos.TabIndex = 7;
             this.gbMantenimientos.TabStop = false;
             this.gbMantenimientos.Text = "Mantenimientos";
@@ -145,12 +147,23 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
+            // btnCategoria
+            // 
+            this.btnCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.Location = new System.Drawing.Point(12, 135);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(116, 105);
+            this.btnCategoria.TabIndex = 3;
+            this.btnCategoria.Text = "Categorías";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(625, 309);
+            this.ClientSize = new System.Drawing.Size(625, 422);
             this.Controls.Add(this.btnFacturacion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.gbMantenimientos);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mantenimientosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
+        private System.Windows.Forms.Button btnCategoria;
     }
 }

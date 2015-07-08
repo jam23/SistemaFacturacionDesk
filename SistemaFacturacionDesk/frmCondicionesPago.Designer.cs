@@ -471,7 +471,7 @@
             this.Name = "frmCondicionesPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Condiciones Pago";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmArticulos_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCondicionesPago_FormClosed);
             this.Load += new System.EventHandler(this.frmCondicionesPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).EndInit();

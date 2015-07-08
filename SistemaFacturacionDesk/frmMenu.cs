@@ -75,6 +75,13 @@ namespace SistemaFacturacionDesk
             this.Visible = false;
         }
 
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoria formCategoria = new frmCategoria();
+            formCategoria.Visible = true;
+            this.Visible = false;
+        }
+
       
     }
 }

@@ -6671,7 +6671,7 @@ SELECT id, descripcion, idCategoria, costoUnitario, precioUnitario, stock, estad
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, descripcion, idCategoria, costoUnitario, precioUnitario, stock, estado" +
@@ -6679,11 +6679,22 @@ SELECT id, descripcion, idCategoria, costoUnitario, precioUnitario, stock, estad
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT     id, descripcion, idCategoria, costoUnitario, precioUnitario, stock, es" +
+            this._commandCollection[1].CommandText = @"SELECT     ARTICULOS.id, ARTICULOS.descripcion, ARTICULOS.costoUnitario, ARTICULOS.precioUnitario, ARTICULOS.stock, ARTICULOS.estado, 
+                      CATEGORIA.descripcion AS desCategoria
+FROM         ARTICULOS INNER JOIN
+                      CATEGORIA ON ARTICULOS.idCategoria = CATEGORIA.id
+WHERE     (ARTICULOS.idCategoria = @IdCategoria) OR
+                      (ARTICULOS.descripcion LIKE '%' + @descripcion + '%')";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IdCategoria", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "idCategoria", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT     id, descripcion, idCategoria, costoUnitario, precioUnitario, stock, es" +
                 "tado\r\nFROM         ARTICULOS\r\nWHERE     (descripcion LIKE \'%\' + @descripcion + \'" +
                 "%\')";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@descripcion", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "descripcion", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6714,8 +6725,28 @@ SELECT id, descripcion, idCategoria, costoUnitario, precioUnitario, stock, estad
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillByDescripcion(FACTURACIONDataSet.ARTICULOSDataTable dataTable, string descripcion) {
+        public virtual int FillByCategoriaDescripcion(FACTURACIONDataSet.ARTICULOSDataTable dataTable, int IdCategoria, string descripcion) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IdCategoria));
+            if ((descripcion == null)) {
+                throw new global::System.ArgumentNullException("descripcion");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(descripcion));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByDescripcion(FACTURACIONDataSet.ARTICULOSDataTable dataTable, string descripcion) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((descripcion == null)) {
                 throw new global::System.ArgumentNullException("descripcion");
             }

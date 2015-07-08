@@ -17,13 +17,6 @@ namespace SistemaFacturacionDesk
             InitializeComponent();
         }
 
-        private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            frmMenu frmMenu = new frmMenu();
-            frmMenu.Visible = true;
-            this.Dispose();
-        }
-
         private void frmCondicionesPago_Load(object sender, EventArgs e)
         {
             ValidarInsertcionDatos();
@@ -105,6 +98,13 @@ namespace SistemaFacturacionDesk
             if (!resultado) this.MensajeAdvertencia("El campo " + NombreCampo + " no puede estar en blanco.", "Datos en Blanco");
 
             return resultado;
+        }
+
+        private void frmCondicionesPago_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
+            this.Dispose();
         }
 
 

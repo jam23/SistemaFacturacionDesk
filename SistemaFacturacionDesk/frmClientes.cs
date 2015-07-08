@@ -17,6 +17,12 @@ namespace SistemaFacturacionDesk
         {
             InitializeComponent();
         }
+        private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
+            this.Dispose();
+        }
 
         private void cLIENTESBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
@@ -123,6 +129,13 @@ namespace SistemaFacturacionDesk
             if (!resultado) this.MensajeAdvertencia("El campo " + NombreCampo + " no puede estar en blanco.", "Datos en Blanco");
 
             return resultado;
+        }
+
+        private void frmClientes_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
+            this.Dispose();
         }
 
     }

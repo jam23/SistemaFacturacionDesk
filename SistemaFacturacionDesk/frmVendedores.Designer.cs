@@ -622,7 +622,7 @@
             this.Name = "frmVendedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Mantenimiento Vendedores";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmArticulos_FormClosed);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmVendedores_FormClosed);
             this.Load += new System.EventHandler(this.frmVendedores_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESDataGridView)).EndInit();
