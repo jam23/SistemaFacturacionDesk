@@ -33,11 +33,17 @@
             System.Windows.Forms.Label cantidadDiasLabel;
             System.Windows.Forms.Label estadoLabel;
             System.Windows.Forms.Label idLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCondicionesPago));
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
             this.aRTICULOSDataGridView = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidadDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cONDICIONESPAGOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.idLabel1 = new System.Windows.Forms.Label();
@@ -61,12 +67,6 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.cONDICIONESPAGOBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.cONDICIONESPAGOBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidadDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cONDICIONESPAGOTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.CONDICIONESPAGOTableAdapter();
             this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -74,13 +74,13 @@
             estadoLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingNavigator)).BeginInit();
             this.cONDICIONESPAGOBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // descripcionLabel
@@ -139,20 +139,20 @@
             this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
             this.aRTICULOSDataGridView.AllowUserToResizeColumns = false;
             this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.aRTICULOSDataGridView.AutoGenerateColumns = false;
             this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aRTICULOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -167,6 +167,44 @@
             this.aRTICULOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.aRTICULOSDataGridView.Size = new System.Drawing.Size(841, 269);
             this.aRTICULOSDataGridView.TabIndex = 1;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionDataGridViewTextBoxColumn
+            // 
+            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
+            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
+            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cantidadDiasDataGridViewTextBoxColumn
+            // 
+            this.cantidadDiasDataGridViewTextBoxColumn.DataPropertyName = "cantidadDias";
+            this.cantidadDiasDataGridViewTextBoxColumn.HeaderText = "Cantidad Días";
+            this.cantidadDiasDataGridViewTextBoxColumn.Name = "cantidadDiasDataGridViewTextBoxColumn";
+            this.cantidadDiasDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // estadoDataGridViewTextBoxColumn
+            // 
+            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
+            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
+            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cONDICIONESPAGOBindingSource
+            // 
+            this.cONDICIONESPAGOBindingSource.DataMember = "CONDICIONESPAGO";
+            this.cONDICIONESPAGOBindingSource.DataSource = this.fACTURACIONDataSet;
+            // 
+            // fACTURACIONDataSet
+            // 
+            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
+            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // groupBox2
             // 
@@ -402,44 +440,6 @@
             this.cONDICIONESPAGOBindingNavigatorSaveItem.Text = "Save Data";
             this.cONDICIONESPAGOBindingNavigatorSaveItem.Click += new System.EventHandler(this.cONDICIONESPAGOBindingNavigatorSaveItem_Click);
             // 
-            // cONDICIONESPAGOBindingSource
-            // 
-            this.cONDICIONESPAGOBindingSource.DataMember = "CONDICIONESPAGO";
-            this.cONDICIONESPAGOBindingSource.DataSource = this.fACTURACIONDataSet;
-            // 
-            // fACTURACIONDataSet
-            // 
-            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
-            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // descripcionDataGridViewTextBoxColumn
-            // 
-            this.descripcionDataGridViewTextBoxColumn.DataPropertyName = "descripcion";
-            this.descripcionDataGridViewTextBoxColumn.HeaderText = "Descripción";
-            this.descripcionDataGridViewTextBoxColumn.Name = "descripcionDataGridViewTextBoxColumn";
-            this.descripcionDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // cantidadDiasDataGridViewTextBoxColumn
-            // 
-            this.cantidadDiasDataGridViewTextBoxColumn.DataPropertyName = "cantidadDias";
-            this.cantidadDiasDataGridViewTextBoxColumn.HeaderText = "Cantidad Días";
-            this.cantidadDiasDataGridViewTextBoxColumn.Name = "cantidadDiasDataGridViewTextBoxColumn";
-            this.cantidadDiasDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // estadoDataGridViewTextBoxColumn
-            // 
-            this.estadoDataGridViewTextBoxColumn.DataPropertyName = "estado";
-            this.estadoDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.estadoDataGridViewTextBoxColumn.Name = "estadoDataGridViewTextBoxColumn";
-            this.estadoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // cONDICIONESPAGOTableAdapter
             // 
             this.cONDICIONESPAGOTableAdapter.ClearBeforeFill = true;
@@ -471,8 +471,11 @@
             this.Name = "frmCondicionesPago";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Condiciones Pago";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmArticulos_FormClosed);
             this.Load += new System.EventHandler(this.frmCondicionesPago_Load);
             ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -481,8 +484,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingNavigator)).EndInit();
             this.cONDICIONESPAGOBindingNavigator.ResumeLayout(false);
             this.cONDICIONESPAGOBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

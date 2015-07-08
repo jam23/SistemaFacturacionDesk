@@ -2441,8 +2441,10 @@ namespace SistemaFacturacionDesk {
                 this.columnapellido2.MaxLength = 50;
                 this.columnporcientoComision.AllowDBNull = false;
                 this.columncontrasena.AllowDBNull = false;
+                this.columncontrasena.DefaultValue = ((string)("contrasena"));
                 this.columncontrasena.MaxLength = 500;
                 this.columnIsAdmin.AllowDBNull = false;
+                this.columnIsAdmin.DefaultValue = ((bool)(true));
                 this.columnnombreUsuario.AllowDBNull = false;
                 this.columnnombreUsuario.MaxLength = 100;
                 this.columnestado.AllowDBNull = false;
@@ -6014,7 +6016,7 @@ SELECT id, idCondicionPago, idVendedor, idCliente, PorcentajeDescuento, ITBIS, f
             tableMapping.ColumnMappings.Add("apellido1", "apellido1");
             tableMapping.ColumnMappings.Add("apellido2", "apellido2");
             tableMapping.ColumnMappings.Add("porcientoComision", "porcientoComision");
-            tableMapping.ColumnMappings.Add("contrasena", "contrasena");
+            tableMapping.ColumnMappings.Add("contrasena01", "contrasena");
             tableMapping.ColumnMappings.Add("IsAdmin", "IsAdmin");
             tableMapping.ColumnMappings.Add("nombreUsuario", "nombreUsuario");
             tableMapping.ColumnMappings.Add("estado", "estado");
@@ -6082,12 +6084,20 @@ SELECT id, nombres, apellido1, apellido2, porcientoComision, contrasena, IsAdmin
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, nombres, apellido1, apellido2, porcientoComision, contrasena, IsAdmin," +
                 " nombreUsuario, estado FROM dbo.VENDEDORES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT     id, nombres, apellido1, apellido2, porcientoComision, contrasena, IsAd" +
+                "min, nombreUsuario, estado\r\nFROM         VENDEDORES\r\nWHERE     (nombres + \' \' + " +
+                "apellido1 + \' \' + apellido2 + \' \' + nombreUsuario LIKE \'%\' + @FilterValue + \'%\')" +
+                "";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FilterValue", global::System.Data.SqlDbType.VarChar, 1024, global::System.Data.ParameterDirection.Input, 0, 0, "", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6112,6 +6122,25 @@ SELECT id, nombres, apellido1, apellido2, porcientoComision, contrasena, IsAdmin
             FACTURACIONDataSet.VENDEDORESDataTable dataTable = new FACTURACIONDataSet.VENDEDORESDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByNombresApellidosUsuario(FACTURACIONDataSet.VENDEDORESDataTable dataTable, string FilterValue) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((FilterValue == null)) {
+                throw new global::System.ArgumentNullException("FilterValue");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(FilterValue));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

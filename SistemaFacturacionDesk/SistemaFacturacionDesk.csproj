@@ -250,10 +250,10 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="FACTURACION.mdf">
+    <None Include="App_Data\FACTURACION.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FACTURACION_log.ldf">
+    </None>
+    <Content Include="App_Data\FACTURACION_log.ldf">
       <DependentUpon>FACTURACION.mdf</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

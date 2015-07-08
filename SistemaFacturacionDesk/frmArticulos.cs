@@ -18,7 +18,7 @@ namespace SistemaFacturacionDesk
         {
             InitializeComponent();
         }
-        EntitiesFACTURACION db = new EntitiesFACTURACION();
+     
         private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
         {
             frmMenu frmMenu = new frmMenu();
@@ -37,7 +37,7 @@ namespace SistemaFacturacionDesk
 
         private void frmArticulos_Load(object sender, EventArgs e)
         {
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("es-do");
+         
             //Validar que no se permitan ciertas teclas presionadas.
             ValidarInsercionDatos();
 

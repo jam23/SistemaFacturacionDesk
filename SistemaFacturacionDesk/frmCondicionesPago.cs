@@ -16,14 +16,20 @@ namespace SistemaFacturacionDesk
         {
             InitializeComponent();
         }
-        
+
+        private void frmArticulos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
+            this.Dispose();
+        }
+
         private void frmCondicionesPago_Load(object sender, EventArgs e)
         {
             ValidarInsertcionDatos();
             estadoComboBox.DataSource = Utilidades.Estado;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CONDICIONESPAGO' table. You can move, or remove it, as needed.
             this.cONDICIONESPAGOTableAdapter.Fill(this.fACTURACIONDataSet.CONDICIONESPAGO);
-          
         }
 
         private void ValidarInsertcionDatos()
