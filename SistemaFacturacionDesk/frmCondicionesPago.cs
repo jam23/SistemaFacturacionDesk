@@ -16,20 +16,91 @@ namespace SistemaFacturacionDesk
         {
             InitializeComponent();
         }
+        
+        private void frmCondicionesPago_Load(object sender, EventArgs e)
+        {
+            ValidarInsertcionDatos();
+            estadoComboBox.DataSource = Utilidades.Estado;
+            // TODO: This line of code loads data into the 'fACTURACIONDataSet.CONDICIONESPAGO' table. You can move, or remove it, as needed.
+            this.cONDICIONESPAGOTableAdapter.Fill(this.fACTURACIONDataSet.CONDICIONESPAGO);
+          
+        }
+
+        private void ValidarInsertcionDatos()
+        {
+            descripcionTextBox.ValidarContenido(TipoDatos.Alfanumerico);
+            cantidadDiasTextBox.ValidarContenido(TipoDatos.Numerico);
+        }
 
         private void cONDICIONESPAGOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.cONDICIONESPAGOBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
+            if (ValidarDatosCampos() && this.Validate())
+            {
+                this.cONDICIONESPAGOBindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
+
+                ///TODO: Verificar porque no muestra mensajes.
+                DataRowView currentRow = (DataRowView)(this.cONDICIONESPAGOBindingSource.Current);
+                if (currentRow.IsNew)
+                {
+                    this.MensajeInformacion("Articulo Agregado.");
+                }
+                else if (currentRow.IsEdit)
+                {
+                    this.MensajeInformacion("Articulo Modificado.");
+                }
+            }
 
         }
 
-        private void frmCondicionesPago_Load(object sender, EventArgs e)
+        private void fillByDescripcion(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'fACTURACIONDataSet.CONDICIONESPAGO' table. You can move, or remove it, as needed.
-            this.cONDICIONESPAGOTableAdapter.Fill(this.fACTURACIONDataSet.CONDICIONESPAGO);
+            try
+            {
+                this.cONDICIONESPAGOTableAdapter.FillByDescripcion(this.fACTURACIONDataSet.CONDICIONESPAGO, txtDescripcion.Text);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
 
         }
+
+        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Clear();
+            fillByDescripcion(sender, e);
+        }
+
+
+        private bool ValidarDatosCampos()
+        {
+            bool resultado = true;
+            string NombreCampo = "";
+            if (string.IsNullOrEmpty(descripcionTextBox.Text))
+            {
+                resultado = false;
+                NombreCampo = "Descripción";
+                descripcionTextBox.Focus();
+            }
+            else if (string.IsNullOrEmpty(cantidadDiasTextBox.Text))
+            {
+                resultado = false;
+                NombreCampo = "Cantidad de Días";
+                cantidadDiasTextBox.Focus();
+            }           
+            else if (estadoComboBox.SelectedIndex == -1)
+            {
+                resultado = false;
+                NombreCampo = "Estado";
+                estadoComboBox.Focus();
+            }
+
+            if (!resultado) this.MensajeAdvertencia("El campo " + NombreCampo + " no puede estar en blanco.", "Datos en Blanco");
+
+            return resultado;
+        }
+
+
     }
 }
