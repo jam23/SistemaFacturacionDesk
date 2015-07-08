@@ -37,8 +37,8 @@
             System.Windows.Forms.Label stockLabel;
             System.Windows.Forms.Label estadoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.aRTICULOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aRTICULOSTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.ARTICULOSTableAdapter();
@@ -65,7 +65,6 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idTextBox = new System.Windows.Forms.TextBox();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
             this.idCategoriaComboBox = new System.Windows.Forms.ComboBox();
             this.cATEGORIABindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -74,7 +73,14 @@
             this.stockTextBox = new System.Windows.Forms.TextBox();
             this.estadoComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.idLabel2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarFiltros = new System.Windows.Forms.Button();
+            this.vendedoresTableAdapter1 = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.VENDEDORESTableAdapter();
             idLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             idCategoriaLabel = new System.Windows.Forms.Label();
@@ -90,13 +96,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.cATEGORIABindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // idLabel
             // 
             idLabel.AutoSize = true;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(105, 27);
+            idLabel.Location = new System.Drawing.Point(100, 16);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(26, 17);
             idLabel.TabIndex = 2;
@@ -106,7 +113,7 @@
             // 
             descripcionLabel.AutoSize = true;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            descripcionLabel.Location = new System.Drawing.Point(33, 53);
+            descripcionLabel.Location = new System.Drawing.Point(28, 42);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(98, 17);
             descripcionLabel.TabIndex = 4;
@@ -116,7 +123,7 @@
             // 
             idCategoriaLabel.AutoSize = true;
             idCategoriaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idCategoriaLabel.Location = new System.Drawing.Point(48, 79);
+            idCategoriaLabel.Location = new System.Drawing.Point(43, 68);
             idCategoriaLabel.Name = "idCategoriaLabel";
             idCategoriaLabel.Size = new System.Drawing.Size(83, 17);
             idCategoriaLabel.TabIndex = 6;
@@ -126,7 +133,7 @@
             // 
             costoUnitarioLabel.AutoSize = true;
             costoUnitarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            costoUnitarioLabel.Location = new System.Drawing.Point(15, 106);
+            costoUnitarioLabel.Location = new System.Drawing.Point(10, 95);
             costoUnitarioLabel.Name = "costoUnitarioLabel";
             costoUnitarioLabel.Size = new System.Drawing.Size(116, 17);
             costoUnitarioLabel.TabIndex = 8;
@@ -136,7 +143,7 @@
             // 
             precioUnitarioLabel.AutoSize = true;
             precioUnitarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            precioUnitarioLabel.Location = new System.Drawing.Point(10, 132);
+            precioUnitarioLabel.Location = new System.Drawing.Point(5, 121);
             precioUnitarioLabel.Name = "precioUnitarioLabel";
             precioUnitarioLabel.Size = new System.Drawing.Size(121, 17);
             precioUnitarioLabel.TabIndex = 10;
@@ -146,7 +153,7 @@
             // 
             stockLabel.AutoSize = true;
             stockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            stockLabel.Location = new System.Drawing.Point(78, 158);
+            stockLabel.Location = new System.Drawing.Point(73, 147);
             stockLabel.Name = "stockLabel";
             stockLabel.Size = new System.Drawing.Size(53, 17);
             stockLabel.TabIndex = 12;
@@ -156,7 +163,7 @@
             // 
             estadoLabel.AutoSize = true;
             estadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            estadoLabel.Location = new System.Drawing.Point(68, 184);
+            estadoLabel.Location = new System.Drawing.Point(63, 173);
             estadoLabel.Name = "estadoLabel";
             estadoLabel.Size = new System.Drawing.Size(63, 17);
             estadoLabel.TabIndex = 14;
@@ -218,7 +225,7 @@
             this.aRTICULOSBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.aRTICULOSBindingNavigator.Name = "aRTICULOSBindingNavigator";
             this.aRTICULOSBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.aRTICULOSBindingNavigator.Size = new System.Drawing.Size(1009, 25);
+            this.aRTICULOSBindingNavigator.Size = new System.Drawing.Size(890, 25);
             this.aRTICULOSBindingNavigator.TabIndex = 0;
             this.aRTICULOSBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -322,19 +329,20 @@
             this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
             this.aRTICULOSDataGridView.AllowUserToResizeColumns = false;
             this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.aRTICULOSDataGridView.AutoGenerateColumns = false;
             this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aRTICULOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -346,11 +354,11 @@
             this.dataGridViewTextBoxColumn7});
             this.aRTICULOSDataGridView.DataSource = this.aRTICULOSBindingSource;
             this.aRTICULOSDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.aRTICULOSDataGridView.Location = new System.Drawing.Point(13, 19);
+            this.aRTICULOSDataGridView.Location = new System.Drawing.Point(6, 29);
             this.aRTICULOSDataGridView.Name = "aRTICULOSDataGridView";
             this.aRTICULOSDataGridView.ReadOnly = true;
             this.aRTICULOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.aRTICULOSDataGridView.Size = new System.Drawing.Size(936, 269);
+            this.aRTICULOSDataGridView.Size = new System.Drawing.Size(847, 269);
             this.aRTICULOSDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn1
@@ -402,20 +410,12 @@
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
-            // idTextBox
-            // 
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "id", true));
-            this.idTextBox.Location = new System.Drawing.Point(135, 24);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(433, 20);
-            this.idTextBox.TabIndex = 3;
-            // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(135, 50);
+            this.descripcionTextBox.Location = new System.Drawing.Point(130, 39);
             this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.Size = new System.Drawing.Size(433, 20);
+            this.descripcionTextBox.Size = new System.Drawing.Size(456, 20);
             this.descripcionTextBox.TabIndex = 5;
             // 
             // idCategoriaComboBox
@@ -425,9 +425,9 @@
             this.idCategoriaComboBox.DisplayMember = "descripcion";
             this.idCategoriaComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.idCategoriaComboBox.FormattingEnabled = true;
-            this.idCategoriaComboBox.Location = new System.Drawing.Point(135, 76);
+            this.idCategoriaComboBox.Location = new System.Drawing.Point(130, 65);
             this.idCategoriaComboBox.Name = "idCategoriaComboBox";
-            this.idCategoriaComboBox.Size = new System.Drawing.Size(433, 21);
+            this.idCategoriaComboBox.Size = new System.Drawing.Size(456, 21);
             this.idCategoriaComboBox.TabIndex = 7;
             this.idCategoriaComboBox.ValueMember = "id";
             // 
@@ -439,25 +439,25 @@
             // costoUnitarioTextBox
             // 
             this.costoUnitarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "costoUnitario", true));
-            this.costoUnitarioTextBox.Location = new System.Drawing.Point(135, 103);
+            this.costoUnitarioTextBox.Location = new System.Drawing.Point(130, 92);
             this.costoUnitarioTextBox.Name = "costoUnitarioTextBox";
-            this.costoUnitarioTextBox.Size = new System.Drawing.Size(433, 20);
+            this.costoUnitarioTextBox.Size = new System.Drawing.Size(456, 20);
             this.costoUnitarioTextBox.TabIndex = 9;
             // 
             // precioUnitarioTextBox
             // 
             this.precioUnitarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "precioUnitario", true));
-            this.precioUnitarioTextBox.Location = new System.Drawing.Point(135, 129);
+            this.precioUnitarioTextBox.Location = new System.Drawing.Point(130, 118);
             this.precioUnitarioTextBox.Name = "precioUnitarioTextBox";
-            this.precioUnitarioTextBox.Size = new System.Drawing.Size(433, 20);
+            this.precioUnitarioTextBox.Size = new System.Drawing.Size(456, 20);
             this.precioUnitarioTextBox.TabIndex = 11;
             // 
             // stockTextBox
             // 
             this.stockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "stock", true));
-            this.stockTextBox.Location = new System.Drawing.Point(135, 155);
+            this.stockTextBox.Location = new System.Drawing.Point(130, 144);
             this.stockTextBox.Name = "stockTextBox";
-            this.stockTextBox.Size = new System.Drawing.Size(433, 20);
+            this.stockTextBox.Size = new System.Drawing.Size(456, 20);
             this.stockTextBox.TabIndex = 13;
             // 
             // estadoComboBox
@@ -466,15 +466,15 @@
             this.estadoComboBox.DisplayMember = "Value";
             this.estadoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estadoComboBox.FormattingEnabled = true;
-            this.estadoComboBox.Location = new System.Drawing.Point(135, 181);
+            this.estadoComboBox.Location = new System.Drawing.Point(130, 170);
             this.estadoComboBox.Name = "estadoComboBox";
-            this.estadoComboBox.Size = new System.Drawing.Size(433, 21);
+            this.estadoComboBox.Size = new System.Drawing.Size(456, 21);
             this.estadoComboBox.TabIndex = 15;
             this.estadoComboBox.ValueMember = "Key";
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.idTextBox);
+            this.groupBox1.Controls.Add(this.idLabel2);
             this.groupBox1.Controls.Add(idLabel);
             this.groupBox1.Controls.Add(this.estadoComboBox);
             this.groupBox1.Controls.Add(estadoLabel);
@@ -488,30 +488,92 @@
             this.groupBox1.Controls.Add(precioUnitarioLabel);
             this.groupBox1.Controls.Add(costoUnitarioLabel);
             this.groupBox1.Controls.Add(this.costoUnitarioTextBox);
-            this.groupBox1.Location = new System.Drawing.Point(22, 41);
+            this.groupBox1.Location = new System.Drawing.Point(11, 135);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(586, 219);
+            this.groupBox1.Size = new System.Drawing.Size(598, 208);
             this.groupBox1.TabIndex = 16;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Articulo";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // idLabel2
+            // 
+            this.idLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "id", true));
+            this.idLabel2.Location = new System.Drawing.Point(127, 17);
+            this.idLabel2.Name = "idLabel2";
+            this.idLabel2.Size = new System.Drawing.Size(100, 23);
+            this.idLabel2.TabIndex = 16;
+            this.idLabel2.Text = "label1";
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.aRTICULOSDataGridView);
-            this.groupBox2.Location = new System.Drawing.Point(22, 277);
+            this.groupBox2.Location = new System.Drawing.Point(11, 349);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(964, 299);
+            this.groupBox2.Size = new System.Drawing.Size(859, 305);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Articulos";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(637, 27);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 20);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Filtrar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.fillByDescripcion_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(26, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Descripción:";
+            // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Location = new System.Drawing.Point(103, 27);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(405, 20);
+            this.txtDescripcion.TabIndex = 21;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.txtDescripcion);
+            this.groupBox3.Controls.Add(this.btnLimpiarFiltros);
+            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(11, 49);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(853, 70);
+            this.groupBox3.TabIndex = 16;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Filtros";
+            // 
+            // btnLimpiarFiltros
+            // 
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(718, 27);
+            this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
+            this.btnLimpiarFiltros.Size = new System.Drawing.Size(111, 20);
+            this.btnLimpiarFiltros.TabIndex = 19;
+            this.btnLimpiarFiltros.Text = "Limpiar Filtros";
+            this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
+            this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
+            // 
+            // vendedoresTableAdapter1
+            // 
+            this.vendedoresTableAdapter1.ClearBeforeFill = true;
             // 
             // frmArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 586);
+            this.ClientSize = new System.Drawing.Size(890, 666);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.aRTICULOSBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -533,6 +595,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -559,7 +623,6 @@
         private System.Windows.Forms.ToolStripButton aRTICULOSBindingNavigatorSaveItem;
         private FACTURACIONDataSetTableAdapters.CATEGORIATableAdapter cATEGORIATableAdapter;
         private System.Windows.Forms.DataGridView aRTICULOSDataGridView;
-        private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox descripcionTextBox;
         private System.Windows.Forms.ComboBox idCategoriaComboBox;
         private System.Windows.Forms.TextBox costoUnitarioTextBox;
@@ -576,6 +639,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+       
+        private System.Windows.Forms.Label idLabel2;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnLimpiarFiltros;
+        private FACTURACIONDataSetTableAdapters.VENDEDORESTableAdapter vendedoresTableAdapter1;
 
 
 

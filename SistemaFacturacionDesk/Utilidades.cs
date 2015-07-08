@@ -9,13 +9,14 @@ using System.Windows.Forms;
 
 namespace SistemaFacturacionDesk
 {
-    public enum Validaciones
+    public enum TipoDatos
     {
         Alfanumerico,
-        Letras,
-        Numerico,
-        Email,
-        Cedula
+        Numerico
+        //,
+        //Letras,
+        //Email,
+        //Cedula
     }
     public static class Utilidades
     {
@@ -47,20 +48,17 @@ namespace SistemaFacturacionDesk
 
         public static List<KeyValuePair<string, string>> Estado = new List<KeyValuePair<string, string>>() { new KeyValuePair<string, string>("A", "Activo"), new KeyValuePair<string, string>("I", "Inactivo") };
 
-        public static void ValidarContenido(this TextBox textBox, Validaciones TipoValidacion)
+        #region Validaciones
+
+        public static void ValidarContenido(this TextBox textBox, TipoDatos TipoValidacion)
         {
             switch (TipoValidacion)
             {
-                case Validaciones.Alfanumerico:
+                case TipoDatos.Alfanumerico:
+                    textBox.KeyPress += validacion_Alfanumerico;
                     break;
-                case Validaciones.Numerico:
-                    break;
-                case Validaciones.Email:
-                    break;
-                case Validaciones.Cedula:
-                    break;
-                case Validaciones.Letras:
-                    textBox.KeyPress += textBox_KeyPress;
+                case TipoDatos.Numerico:
+                    textBox.KeyPress += validacion_numerico;
                     break;
                 default:
                     break;
@@ -68,13 +66,40 @@ namespace SistemaFacturacionDesk
 
         }
 
-        private static void textBox_KeyPress(object sender, KeyPressEventArgs e)
+        private static void validacion_numerico(object sender, KeyPressEventArgs e)
         {
-            if (!((e.KeyChar >= 'a' && e.KeyChar <= 'z') || (e.KeyChar >= 'A' && e.KeyChar <= 'Z')))
+            // if (!((e.KeyChar >= 'a' && e.KeyChar <= 'z') || (e.KeyChar >= 'A' && e.KeyChar <= 'Z')))
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar == char.Parse(".")) //Espacio: || char.IsSeparator(e.KeyChar)
             {
-                e.Handled = true;
+                e.Handled = false;
             }
+            else
+            {
+                e.Handled = true; //LOS DEMAS QUEDAN BLOQUEADOS
+            }
+
+
         }
+
+        private static void validacion_Alfanumerico(object sender, KeyPressEventArgs e)
+        {
+            //if (!char.IsLetter(e.KeyChar) || !char.IsControl(e.KeyChar) || !char.IsDigit(e.KeyChar))
+            //{
+            //    e.Handled = true;
+            //}
+
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false; //QUE NO SE BLOQUEE LAS LETRAS
+            }
+            else
+            {
+                e.Handled = true; //LOS DEMAS QUEDAN BLOQUEADOS
+            }
+
+        }
+
+        #endregion
 
     }
 }
