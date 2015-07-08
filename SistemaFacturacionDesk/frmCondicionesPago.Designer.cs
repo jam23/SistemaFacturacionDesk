@@ -37,7 +37,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCondicionesPago));
             this.btnLimpiarFiltros = new System.Windows.Forms.Button();
-            this.aRTICULOSDataGridView = new System.Windows.Forms.DataGridView();
+            this.cONDICIONESPAGODataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidadDiasDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,7 +73,7 @@
             cantidadDiasLabel = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGODataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -133,18 +133,18 @@
             this.btnLimpiarFiltros.UseVisualStyleBackColor = true;
             this.btnLimpiarFiltros.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
             // 
-            // aRTICULOSDataGridView
+            // cONDICIONESPAGODataGridView
             // 
-            this.aRTICULOSDataGridView.AllowUserToAddRows = false;
-            this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
-            this.aRTICULOSDataGridView.AllowUserToResizeColumns = false;
-            this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
+            this.cONDICIONESPAGODataGridView.AllowUserToAddRows = false;
+            this.cONDICIONESPAGODataGridView.AllowUserToDeleteRows = false;
+            this.cONDICIONESPAGODataGridView.AllowUserToResizeColumns = false;
+            this.cONDICIONESPAGODataGridView.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.aRTICULOSDataGridView.AutoGenerateColumns = false;
-            this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.cONDICIONESPAGODataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.cONDICIONESPAGODataGridView.AutoGenerateColumns = false;
+            this.cONDICIONESPAGODataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.cONDICIONESPAGODataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.cONDICIONESPAGODataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -152,21 +152,21 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aRTICULOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cONDICIONESPAGODataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.cONDICIONESPAGODataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.cONDICIONESPAGODataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.descripcionDataGridViewTextBoxColumn,
             this.cantidadDiasDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn});
-            this.aRTICULOSDataGridView.DataSource = this.cONDICIONESPAGOBindingSource;
-            this.aRTICULOSDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.aRTICULOSDataGridView.Location = new System.Drawing.Point(6, 29);
-            this.aRTICULOSDataGridView.Name = "aRTICULOSDataGridView";
-            this.aRTICULOSDataGridView.ReadOnly = true;
-            this.aRTICULOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.aRTICULOSDataGridView.Size = new System.Drawing.Size(841, 269);
-            this.aRTICULOSDataGridView.TabIndex = 1;
+            this.cONDICIONESPAGODataGridView.DataSource = this.cONDICIONESPAGOBindingSource;
+            this.cONDICIONESPAGODataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.cONDICIONESPAGODataGridView.Location = new System.Drawing.Point(6, 29);
+            this.cONDICIONESPAGODataGridView.Name = "cONDICIONESPAGODataGridView";
+            this.cONDICIONESPAGODataGridView.ReadOnly = true;
+            this.cONDICIONESPAGODataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.cONDICIONESPAGODataGridView.Size = new System.Drawing.Size(841, 269);
+            this.cONDICIONESPAGODataGridView.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -208,7 +208,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.aRTICULOSDataGridView);
+            this.groupBox2.Controls.Add(this.cONDICIONESPAGODataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(17, 287);
             this.groupBox2.Name = "groupBox2";
@@ -473,7 +473,7 @@
             this.Text = "Condiciones Pago";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmArticulos_FormClosed);
             this.Load += new System.EventHandler(this.frmCondicionesPago_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGODataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             this.groupBox2.ResumeLayout(false);
@@ -492,7 +492,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnLimpiarFiltros;
-        private System.Windows.Forms.DataGridView aRTICULOSDataGridView;
+        private System.Windows.Forms.DataGridView cONDICIONESPAGODataGridView;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtDescripcion;

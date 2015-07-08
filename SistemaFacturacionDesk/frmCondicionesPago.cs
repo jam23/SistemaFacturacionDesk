@@ -26,13 +26,13 @@ namespace SistemaFacturacionDesk
 
         private void frmCondicionesPago_Load(object sender, EventArgs e)
         {
-            ValidarInsertcionDatos();
+            ValidarInsercionDatos();
             estadoComboBox.DataSource = Utilidades.Estado;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CONDICIONESPAGO' table. You can move, or remove it, as needed.
             this.cONDICIONESPAGOTableAdapter.Fill(this.fACTURACIONDataSet.CONDICIONESPAGO);
         }
 
-        private void ValidarInsertcionDatos()
+        private void ValidarInsercionDatos()
         {
             descripcionTextBox.ValidarContenido(TipoDatos.Alfanumerico);
             cantidadDiasTextBox.ValidarContenido(TipoDatos.Numerico);

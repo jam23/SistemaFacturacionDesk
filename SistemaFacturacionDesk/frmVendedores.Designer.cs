@@ -37,11 +37,11 @@
             System.Windows.Forms.Label contrasenaLabel;
             System.Windows.Forms.Label nombreUsuarioLabel;
             System.Windows.Forms.Label estadoLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVendedores));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.aRTICULOSDataGridView = new System.Windows.Forms.DataGridView();
+            this.vENDEDORESDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombresDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido1DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +92,7 @@
             nombreUsuarioLabel = new System.Windows.Forms.Label();
             estadoLabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -183,7 +183,7 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.aRTICULOSDataGridView);
+            this.groupBox2.Controls.Add(this.vENDEDORESDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 377);
             this.groupBox2.Name = "groupBox2";
@@ -192,27 +192,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Vendedores";
             // 
-            // aRTICULOSDataGridView
+            // vENDEDORESDataGridView
             // 
-            this.aRTICULOSDataGridView.AllowUserToAddRows = false;
-            this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
-            this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.aRTICULOSDataGridView.AutoGenerateColumns = false;
-            this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aRTICULOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.vENDEDORESDataGridView.AllowUserToAddRows = false;
+            this.vENDEDORESDataGridView.AllowUserToDeleteRows = false;
+            this.vENDEDORESDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.vENDEDORESDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.vENDEDORESDataGridView.AutoGenerateColumns = false;
+            this.vENDEDORESDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vENDEDORESDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.vENDEDORESDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.vENDEDORESDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.vENDEDORESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vENDEDORESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nombresDataGridViewTextBoxColumn,
             this.apellido1DataGridViewTextBoxColumn,
@@ -222,14 +222,14 @@
             this.isAdminDataGridViewCheckBoxColumn,
             this.nombreUsuarioDataGridViewTextBoxColumn,
             this.estadoDataGridViewTextBoxColumn});
-            this.aRTICULOSDataGridView.DataSource = this.vENDEDORESBindingSource;
-            this.aRTICULOSDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.aRTICULOSDataGridView.Location = new System.Drawing.Point(6, 29);
-            this.aRTICULOSDataGridView.Name = "aRTICULOSDataGridView";
-            this.aRTICULOSDataGridView.ReadOnly = true;
-            this.aRTICULOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.aRTICULOSDataGridView.Size = new System.Drawing.Size(951, 269);
-            this.aRTICULOSDataGridView.TabIndex = 1;
+            this.vENDEDORESDataGridView.DataSource = this.vENDEDORESBindingSource;
+            this.vENDEDORESDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.vENDEDORESDataGridView.Location = new System.Drawing.Point(6, 29);
+            this.vENDEDORESDataGridView.Name = "vENDEDORESDataGridView";
+            this.vENDEDORESDataGridView.ReadOnly = true;
+            this.vENDEDORESDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.vENDEDORESDataGridView.Size = new System.Drawing.Size(951, 269);
+            this.vENDEDORESDataGridView.TabIndex = 1;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -625,7 +625,7 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmArticulos_FormClosed);
             this.Load += new System.EventHandler(this.frmVendedores_Load);
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vENDEDORESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -643,7 +643,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView aRTICULOSDataGridView;
+        private System.Windows.Forms.DataGridView vENDEDORESDataGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtFilterValue;
