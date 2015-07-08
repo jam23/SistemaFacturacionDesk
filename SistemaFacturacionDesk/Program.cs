@@ -16,7 +16,7 @@ namespace SistemaFacturacionDesk
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmClientes());// Application.Run(new Cuenta.frmIniciarSesion());
+            Application.Run(new frmCategoria());// Application.Run(new Cuenta.frmIniciarSesion());
         }
     }
 }
