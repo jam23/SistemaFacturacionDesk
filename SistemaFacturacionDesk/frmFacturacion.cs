@@ -16,6 +16,9 @@ namespace SistemaFacturacionDesk
 
         EntitiesFACTURACION db = new EntitiesFACTURACION();
         private static Dictionary<int, int> ArticulosFacturados = new Dictionary<int, int>();
+        frmBusquedaArticulo formBusquedaArticulo = new frmBusquedaArticulo();
+        frmBusquedaCliente formBuscarCliente = new frmBusquedaCliente();
+
         public frmFacturacion()
         {
             InitializeComponent();
@@ -30,6 +33,8 @@ namespace SistemaFacturacionDesk
 
         private void frmFacturacion_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'fACTURACIONDataSet.CONDICIONESPAGO' table. You can move, or remove it, as needed.
+            this.cONDICIONESPAGOTableAdapter.Fill(this.fACTURACIONDataSet.CONDICIONESPAGO);
             LimpiarControlesClientes();
         }
 
@@ -49,7 +54,7 @@ namespace SistemaFacturacionDesk
 
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
-            frmBusquedaCliente formBuscarCliente = new frmBusquedaCliente();
+
             formBuscarCliente.Visible = true;
             formBuscarCliente.Owner = this;
         }
@@ -93,7 +98,8 @@ namespace SistemaFacturacionDesk
                 db.SaveChanges();
                 CargarGridArticulosFacturados();
             }
-            else {
+            else
+            {
                 this.MensajeAdvertencia("No se agregó el artículo, cantidad = 0");
             }
         }
@@ -134,7 +140,7 @@ namespace SistemaFacturacionDesk
 
         private void btnAgregarArticulos_Click(object sender, EventArgs e)
         {
-            frmBusquedaArticulo formBusquedaArticulo = new frmBusquedaArticulo();
+            
             formBusquedaArticulo.Visible = true;
             formBusquedaArticulo.Owner = this;
 
@@ -143,24 +149,24 @@ namespace SistemaFacturacionDesk
         public void SetearArticulo(int IdArticulo)
         {
             string cantidadArticulo = "";
-
+            int validCantidad = 0;
             #region Obtener Cantidad de Articulos
 
             do
             {
                 cantidadArticulo = Microsoft.VisualBasic.Interaction.InputBox("", "Cantidad de Articulos", "0");
-                //if (!int.TryParse(cant, out cantidadArticulo))
-                //{
-                //    this.MensajeAdvertencia("Datos incorrectos, intentar nuevamente! ");
-                //    cant = string.Empty;
-                //}
-
+                if (string.IsNullOrEmpty(cantidadArticulo) || cantidadArticulo == "0") { formBusquedaArticulo.Visible = true; return; }
+                
                 if (ValidarArticuloFacturar(IdArticulo, cantidadArticulo))
                 {
                     AgregarArticulo(IdArticulo, int.Parse(cantidadArticulo));
+                    formBusquedaArticulo.Visible = false;
                 }
 
-            } while (string.IsNullOrEmpty(cantidadArticulo));
+            } while (!int.TryParse(cantidadArticulo, out validCantidad));
+
+
+
             #endregion
 
 
@@ -201,6 +207,14 @@ namespace SistemaFacturacionDesk
 
             return valido;
         }
+
+        private void btnRemoverArticulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
         /*
 
         private void RealizarCalculos()

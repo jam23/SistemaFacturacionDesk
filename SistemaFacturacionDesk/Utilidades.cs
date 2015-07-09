@@ -101,5 +101,14 @@ namespace SistemaFacturacionDesk
 
         #endregion
 
+
+        public static void PrevenirUsuarioCerrarVentana(FormClosingEventArgs e)
+        {
+            //Prevenir que el usuario cierre el formulario presionando la "X" de la ventana.
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

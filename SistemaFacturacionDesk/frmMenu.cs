@@ -28,12 +28,10 @@ namespace SistemaFacturacionDesk
 
         private void frmMenu_FormClosing(object sender, FormClosingEventArgs e)
         {
-            //Prevenir que el usuario cierre el formulario presionando la "X" de la ventana.
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true;
-            }
+            Utilidades.PrevenirUsuarioCerrarVentana(e);
         }
+
+       
 
         private void btnSalir_Click(object sender, EventArgs e)
         {

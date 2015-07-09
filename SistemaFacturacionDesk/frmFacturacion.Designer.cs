@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label telefonoLabel;
             System.Windows.Forms.Label nombreComercialLabel;
             System.Windows.Forms.Label razonSocialLabel;
@@ -39,10 +40,16 @@
             System.Windows.Forms.Label fechaRegistroLabel;
             System.Windows.Forms.Label porcentajeDescuentoLabel;
             System.Windows.Forms.Label iTBISLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.idCondicionPagoComboBox = new System.Windows.Forms.ComboBox();
+            this.comentarioTextBox = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRemoverArticulo = new System.Windows.Forms.Button();
+            this.btnAgregarArticulos = new System.Windows.Forms.Button();
+            this.aRTICULOSDataGridView = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.rNC_CEDTextBox = new System.Windows.Forms.TextBox();
@@ -52,13 +59,11 @@
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.btnLimpiarCliente = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.idCondicionPagoComboBox = new System.Windows.Forms.ComboBox();
-            this.comentarioTextBox = new System.Windows.Forms.TextBox();
-            this.fechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.porcentajeDescuentoTextBox = new System.Windows.Forms.TextBox();
             this.iTBISTextBox = new System.Windows.Forms.TextBox();
-            this.aRTICULOSDataGridView = new System.Windows.Forms.DataGridView();
-            this.btnAgregarArticulos = new System.Windows.Forms.Button();
+            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
+            this.cONDICIONESPAGOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cONDICIONESPAGOTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.CONDICIONESPAGOTableAdapter();
             telefonoLabel = new System.Windows.Forms.Label();
             nombreComercialLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -72,8 +77,10 @@
             iTBISLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // telefonoLabel
@@ -142,6 +149,56 @@
             idLabel.TabIndex = 32;
             idLabel.Text = "Id:";
             // 
+            // idCondicionPagoLabel
+            // 
+            idCondicionPagoLabel.AutoSize = true;
+            idCondicionPagoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            idCondicionPagoLabel.Location = new System.Drawing.Point(17, 34);
+            idCondicionPagoLabel.Name = "idCondicionPagoLabel";
+            idCondicionPagoLabel.Size = new System.Drawing.Size(126, 17);
+            idCondicionPagoLabel.TabIndex = 2;
+            idCondicionPagoLabel.Text = "Condición Pago:";
+            // 
+            // comentarioLabel
+            // 
+            comentarioLabel.AutoSize = true;
+            comentarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            comentarioLabel.Location = new System.Drawing.Point(48, 92);
+            comentarioLabel.Name = "comentarioLabel";
+            comentarioLabel.Size = new System.Drawing.Size(95, 17);
+            comentarioLabel.TabIndex = 14;
+            comentarioLabel.Text = "Comentario:";
+            // 
+            // fechaRegistroLabel
+            // 
+            fechaRegistroLabel.AutoSize = true;
+            fechaRegistroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            fechaRegistroLabel.Location = new System.Drawing.Point(20, 65);
+            fechaRegistroLabel.Name = "fechaRegistroLabel";
+            fechaRegistroLabel.Size = new System.Drawing.Size(123, 17);
+            fechaRegistroLabel.TabIndex = 15;
+            fechaRegistroLabel.Text = "Fecha Registro:";
+            // 
+            // porcentajeDescuentoLabel
+            // 
+            porcentajeDescuentoLabel.AutoSize = true;
+            porcentajeDescuentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            porcentajeDescuentoLabel.Location = new System.Drawing.Point(346, 641);
+            porcentajeDescuentoLabel.Name = "porcentajeDescuentoLabel";
+            porcentajeDescuentoLabel.Size = new System.Drawing.Size(173, 17);
+            porcentajeDescuentoLabel.TabIndex = 12;
+            porcentajeDescuentoLabel.Text = "Porcentaje Descuento:";
+            // 
+            // iTBISLabel
+            // 
+            iTBISLabel.AutoSize = true;
+            iTBISLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            iTBISLabel.Location = new System.Drawing.Point(12, 641);
+            iTBISLabel.Name = "iTBISLabel";
+            iTBISLabel.Size = new System.Drawing.Size(51, 17);
+            iTBISLabel.TabIndex = 14;
+            iTBISLabel.Text = "ITBIS:";
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(fechaRegistroLabel);
@@ -152,26 +209,101 @@
             this.groupBox1.Controls.Add(this.comentarioTextBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(952, 205);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información Factura";
             // 
+            // fechaRegistroDateTimePicker
+            // 
+            this.fechaRegistroDateTimePicker.Location = new System.Drawing.Point(147, 60);
+            this.fechaRegistroDateTimePicker.Name = "fechaRegistroDateTimePicker";
+            this.fechaRegistroDateTimePicker.Size = new System.Drawing.Size(781, 23);
+            this.fechaRegistroDateTimePicker.TabIndex = 16;
+            // 
+            // idCondicionPagoComboBox
+            // 
+            this.idCondicionPagoComboBox.DataSource = this.cONDICIONESPAGOBindingSource;
+            this.idCondicionPagoComboBox.DisplayMember = "descripcion";
+            this.idCondicionPagoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.idCondicionPagoComboBox.FormattingEnabled = true;
+            this.idCondicionPagoComboBox.Location = new System.Drawing.Point(147, 31);
+            this.idCondicionPagoComboBox.Name = "idCondicionPagoComboBox";
+            this.idCondicionPagoComboBox.Size = new System.Drawing.Size(781, 24);
+            this.idCondicionPagoComboBox.TabIndex = 3;
+            this.idCondicionPagoComboBox.ValueMember = "id";
+            // 
+            // comentarioTextBox
+            // 
+            this.comentarioTextBox.Location = new System.Drawing.Point(147, 89);
+            this.comentarioTextBox.Multiline = true;
+            this.comentarioTextBox.Name = "comentarioTextBox";
+            this.comentarioTextBox.Size = new System.Drawing.Size(781, 95);
+            this.comentarioTextBox.TabIndex = 15;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnRemoverArticulo);
             this.groupBox2.Controls.Add(this.btnAgregarArticulos);
             this.groupBox2.Controls.Add(this.aRTICULOSDataGridView);
             this.groupBox2.Location = new System.Drawing.Point(16, 373);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox2.Size = new System.Drawing.Size(952, 263);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Size = new System.Drawing.Size(952, 225);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Articulos";
+            // 
+            // btnRemoverArticulo
+            // 
+            this.btnRemoverArticulo.Location = new System.Drawing.Point(801, 58);
+            this.btnRemoverArticulo.Name = "btnRemoverArticulo";
+            this.btnRemoverArticulo.Size = new System.Drawing.Size(127, 29);
+            this.btnRemoverArticulo.TabIndex = 3;
+            this.btnRemoverArticulo.Text = "Remover Articulo";
+            this.btnRemoverArticulo.UseVisualStyleBackColor = true;
+            this.btnRemoverArticulo.Click += new System.EventHandler(this.btnRemoverArticulo_Click);
+            // 
+            // btnAgregarArticulos
+            // 
+            this.btnAgregarArticulos.Location = new System.Drawing.Point(801, 23);
+            this.btnAgregarArticulos.Name = "btnAgregarArticulos";
+            this.btnAgregarArticulos.Size = new System.Drawing.Size(127, 29);
+            this.btnAgregarArticulos.TabIndex = 3;
+            this.btnAgregarArticulos.Text = "Agregar Articulo";
+            this.btnAgregarArticulos.UseVisualStyleBackColor = true;
+            this.btnAgregarArticulos.Click += new System.EventHandler(this.btnAgregarArticulos_Click);
+            // 
+            // aRTICULOSDataGridView
+            // 
+            this.aRTICULOSDataGridView.AllowUserToAddRows = false;
+            this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
+            this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.aRTICULOSDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.aRTICULOSDataGridView.Location = new System.Drawing.Point(11, 23);
+            this.aRTICULOSDataGridView.Name = "aRTICULOSDataGridView";
+            this.aRTICULOSDataGridView.ReadOnly = true;
+            this.aRTICULOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.aRTICULOSDataGridView.Size = new System.Drawing.Size(765, 192);
+            this.aRTICULOSDataGridView.TabIndex = 2;
             // 
             // groupBox4
             // 
@@ -190,9 +322,9 @@
             this.groupBox4.Controls.Add(this.btnLimpiarCliente);
             this.groupBox4.Controls.Add(this.btnBuscarCliente);
             this.groupBox4.Location = new System.Drawing.Point(16, 228);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox4.Size = new System.Drawing.Size(952, 137);
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
@@ -201,7 +333,7 @@
             // idTextBox
             // 
             this.idTextBox.Location = new System.Drawing.Point(161, 22);
-            this.idTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.ReadOnly = true;
             this.idTextBox.Size = new System.Drawing.Size(184, 23);
@@ -210,7 +342,7 @@
             // rNC_CEDTextBox
             // 
             this.rNC_CEDTextBox.Location = new System.Drawing.Point(528, 22);
-            this.rNC_CEDTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rNC_CEDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.rNC_CEDTextBox.MaxLength = 11;
             this.rNC_CEDTextBox.Name = "rNC_CEDTextBox";
             this.rNC_CEDTextBox.ReadOnly = true;
@@ -220,7 +352,7 @@
             // telefonoTextBox
             // 
             this.telefonoTextBox.Location = new System.Drawing.Point(528, 54);
-            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.telefonoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.telefonoTextBox.MaxLength = 10;
             this.telefonoTextBox.Name = "telefonoTextBox";
             this.telefonoTextBox.ReadOnly = true;
@@ -230,7 +362,7 @@
             // nombreComercialTextBox
             // 
             this.nombreComercialTextBox.Location = new System.Drawing.Point(161, 54);
-            this.nombreComercialTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nombreComercialTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.nombreComercialTextBox.Name = "nombreComercialTextBox";
             this.nombreComercialTextBox.ReadOnly = true;
             this.nombreComercialTextBox.Size = new System.Drawing.Size(263, 23);
@@ -239,7 +371,7 @@
             // razonSocialTextBox
             // 
             this.razonSocialTextBox.Location = new System.Drawing.Point(161, 89);
-            this.razonSocialTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.razonSocialTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.razonSocialTextBox.Name = "razonSocialTextBox";
             this.razonSocialTextBox.ReadOnly = true;
             this.razonSocialTextBox.Size = new System.Drawing.Size(263, 23);
@@ -248,7 +380,7 @@
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(528, 86);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.ReadOnly = true;
             this.emailTextBox.Size = new System.Drawing.Size(248, 23);
@@ -257,7 +389,7 @@
             // btnLimpiarCliente
             // 
             this.btnLimpiarCliente.Location = new System.Drawing.Point(801, 55);
-            this.btnLimpiarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiarCliente.Name = "btnLimpiarCliente";
             this.btnLimpiarCliente.Size = new System.Drawing.Size(127, 32);
             this.btnLimpiarCliente.TabIndex = 19;
@@ -268,7 +400,7 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Location = new System.Drawing.Point(801, 18);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(127, 32);
             this.btnBuscarCliente.TabIndex = 19;
@@ -276,130 +408,36 @@
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
             // 
-            // idCondicionPagoLabel
-            // 
-            idCondicionPagoLabel.AutoSize = true;
-            idCondicionPagoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idCondicionPagoLabel.Location = new System.Drawing.Point(17, 34);
-            idCondicionPagoLabel.Name = "idCondicionPagoLabel";
-            idCondicionPagoLabel.Size = new System.Drawing.Size(126, 17);
-            idCondicionPagoLabel.TabIndex = 2;
-            idCondicionPagoLabel.Text = "Condición Pago:";
-            // 
-            // idCondicionPagoComboBox
-            // 
-            this.idCondicionPagoComboBox.FormattingEnabled = true;
-            this.idCondicionPagoComboBox.Location = new System.Drawing.Point(147, 31);
-            this.idCondicionPagoComboBox.Name = "idCondicionPagoComboBox";
-            this.idCondicionPagoComboBox.Size = new System.Drawing.Size(781, 24);
-            this.idCondicionPagoComboBox.TabIndex = 3;
-            this.idCondicionPagoComboBox.ValueMember = "id";
-            // 
-            // comentarioLabel
-            // 
-            comentarioLabel.AutoSize = true;
-            comentarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            comentarioLabel.Location = new System.Drawing.Point(48, 92);
-            comentarioLabel.Name = "comentarioLabel";
-            comentarioLabel.Size = new System.Drawing.Size(95, 17);
-            comentarioLabel.TabIndex = 14;
-            comentarioLabel.Text = "Comentario:";
-            // 
-            // comentarioTextBox
-            // 
-            this.comentarioTextBox.Location = new System.Drawing.Point(147, 89);
-            this.comentarioTextBox.Multiline = true;
-            this.comentarioTextBox.Name = "comentarioTextBox";
-            this.comentarioTextBox.Size = new System.Drawing.Size(781, 95);
-            this.comentarioTextBox.TabIndex = 15;
-            // 
-            // fechaRegistroLabel
-            // 
-            fechaRegistroLabel.AutoSize = true;
-            fechaRegistroLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fechaRegistroLabel.Location = new System.Drawing.Point(20, 65);
-            fechaRegistroLabel.Name = "fechaRegistroLabel";
-            fechaRegistroLabel.Size = new System.Drawing.Size(123, 17);
-            fechaRegistroLabel.TabIndex = 15;
-            fechaRegistroLabel.Text = "Fecha Registro:";
-            // 
-            // fechaRegistroDateTimePicker
-            // 
-            this.fechaRegistroDateTimePicker.Location = new System.Drawing.Point(147, 60);
-            this.fechaRegistroDateTimePicker.Name = "fechaRegistroDateTimePicker";
-            this.fechaRegistroDateTimePicker.Size = new System.Drawing.Size(781, 23);
-            this.fechaRegistroDateTimePicker.TabIndex = 16;
-            // 
-            // porcentajeDescuentoLabel
-            // 
-            porcentajeDescuentoLabel.AutoSize = true;
-            porcentajeDescuentoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            porcentajeDescuentoLabel.Location = new System.Drawing.Point(52, 719);
-            porcentajeDescuentoLabel.Name = "porcentajeDescuentoLabel";
-            porcentajeDescuentoLabel.Size = new System.Drawing.Size(173, 17);
-            porcentajeDescuentoLabel.TabIndex = 12;
-            porcentajeDescuentoLabel.Text = "Porcentaje Descuento:";
-            // 
             // porcentajeDescuentoTextBox
             // 
-            this.porcentajeDescuentoTextBox.Location = new System.Drawing.Point(229, 716);
+            this.porcentajeDescuentoTextBox.Location = new System.Drawing.Point(525, 641);
             this.porcentajeDescuentoTextBox.Name = "porcentajeDescuentoTextBox";
-            this.porcentajeDescuentoTextBox.Size = new System.Drawing.Size(608, 23);
+            this.porcentajeDescuentoTextBox.Size = new System.Drawing.Size(204, 23);
             this.porcentajeDescuentoTextBox.TabIndex = 13;
-            // 
-            // iTBISLabel
-            // 
-            iTBISLabel.AutoSize = true;
-            iTBISLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            iTBISLabel.Location = new System.Drawing.Point(174, 693);
-            iTBISLabel.Name = "iTBISLabel";
-            iTBISLabel.Size = new System.Drawing.Size(51, 17);
-            iTBISLabel.TabIndex = 14;
-            iTBISLabel.Text = "ITBIS:";
             // 
             // iTBISTextBox
             // 
-            this.iTBISTextBox.Location = new System.Drawing.Point(229, 690);
+            this.iTBISTextBox.Location = new System.Drawing.Point(67, 638);
             this.iTBISTextBox.Name = "iTBISTextBox";
             this.iTBISTextBox.Size = new System.Drawing.Size(200, 23);
             this.iTBISTextBox.TabIndex = 15;
             // 
-            // aRTICULOSDataGridView
+            // fACTURACIONDataSet
             // 
-            this.aRTICULOSDataGridView.AllowUserToAddRows = false;
-            this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
-            this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.aRTICULOSDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.aRTICULOSDataGridView.Location = new System.Drawing.Point(11, 23);
-            this.aRTICULOSDataGridView.Name = "aRTICULOSDataGridView";
-            this.aRTICULOSDataGridView.ReadOnly = true;
-            this.aRTICULOSDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.aRTICULOSDataGridView.Size = new System.Drawing.Size(765, 103);
-            this.aRTICULOSDataGridView.TabIndex = 2;
+            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
+            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // btnAgregarArticulos
+            // cONDICIONESPAGOBindingSource
             // 
-            this.btnAgregarArticulos.Location = new System.Drawing.Point(801, 23);
-            this.btnAgregarArticulos.Name = "btnAgregarArticulos";
-            this.btnAgregarArticulos.Size = new System.Drawing.Size(127, 29);
-            this.btnAgregarArticulos.TabIndex = 3;
-            this.btnAgregarArticulos.Text = "Agregar Articulo";
-            this.btnAgregarArticulos.UseVisualStyleBackColor = true;
-            this.btnAgregarArticulos.Click += new System.EventHandler(this.btnAgregarArticulos_Click);
+            this.cONDICIONESPAGOBindingSource.AllowNew = false;
+            this.cONDICIONESPAGOBindingSource.DataMember = "CONDICIONESPAGO";
+            this.cONDICIONESPAGOBindingSource.DataSource = this.fACTURACIONDataSet;
+            this.cONDICIONESPAGOBindingSource.Filter = "estado = \'A\'";
+            this.cONDICIONESPAGOBindingSource.Sort = "descripcion asc";
+            // 
+            // cONDICIONESPAGOTableAdapter
+            // 
+            this.cONDICIONESPAGOTableAdapter.ClearBeforeFill = true;
             // 
             // frmFacturacion
             // 
@@ -414,7 +452,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmFacturacion";
             this.Text = "Facturación de Articulos";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmFacturacion_FormClosed);
@@ -422,9 +460,11 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cONDICIONESPAGOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -450,6 +490,10 @@
         private System.Windows.Forms.TextBox iTBISTextBox;
         private System.Windows.Forms.Button btnAgregarArticulos;
         private System.Windows.Forms.DataGridView aRTICULOSDataGridView;
+        private System.Windows.Forms.Button btnRemoverArticulo;
+        private FACTURACIONDataSet fACTURACIONDataSet;
+        private System.Windows.Forms.BindingSource cONDICIONESPAGOBindingSource;
+        private FACTURACIONDataSetTableAdapters.CONDICIONESPAGOTableAdapter cONDICIONESPAGOTableAdapter;
 
     }
 }

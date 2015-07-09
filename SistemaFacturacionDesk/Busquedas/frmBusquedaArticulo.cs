@@ -22,7 +22,7 @@ namespace SistemaFacturacionDesk.Busquedas
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CATEGORIA' table. You can move, or remove it, as needed.
             this.cATEGORIATableAdapter.Fill(this.fACTURACIONDataSet.CATEGORIA);
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.ARTICULOS' table. You can move, or remove it, as needed.
-           this.aRTICULOSTableAdapter.Fill(this.fACTURACIONDataSet.ARTICULOS);
+            this.aRTICULOSTableAdapter.Fill(this.fACTURACIONDataSet.ARTICULOS);
             //this.aRTICULOSTableAdapter.FillByCategoriaDescripcion(this.fACTURACIONDataSet.ARTICULOS,0, "");
         }
 
@@ -47,8 +47,33 @@ namespace SistemaFacturacionDesk.Busquedas
         private void cLIENTESDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             frmFacturacion form = (frmFacturacion)this.Owner;
-            form.SetearArticulo(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+            if (e.RowIndex >= 0)
+            {
+                form.SetearArticulo(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                
+            }
+            else
+            {
+                this.MensajeAdvertencia("Error al seleccionar artículo, favor intentar nuevamente.");
+            }
+
+        }
+
+        private void btnLimpiarFiltros_Click(object sender, EventArgs e)
+        {
+            txtFilterValue.Clear();
+            fillByDescripcion(sender, e);
             this.Visible = false;
+        }
+
+        private void frmBusquedaArticulo_VisibleChanged(object sender, EventArgs e)
+        {
+            fillByDescripcion(sender, e);
+        }
+
+        private void frmBusquedaArticulo_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Utilidades.PrevenirUsuarioCerrarVentana(e);
         }
     }
 }
