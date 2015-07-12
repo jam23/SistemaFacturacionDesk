@@ -37,8 +37,8 @@
             System.Windows.Forms.Label stockLabel;
             System.Windows.Forms.Label estadoLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmArticulos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.aRTICULOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aRTICULOSTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.ARTICULOSTableAdapter();
@@ -102,8 +102,9 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
+            idLabel.BackColor = System.Drawing.Color.Transparent;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(100, 16);
+            idLabel.Location = new System.Drawing.Point(100, 14);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(26, 17);
             idLabel.TabIndex = 2;
@@ -112,6 +113,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
+            descripcionLabel.BackColor = System.Drawing.Color.Transparent;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(28, 42);
             descripcionLabel.Name = "descripcionLabel";
@@ -122,6 +124,7 @@
             // idCategoriaLabel
             // 
             idCategoriaLabel.AutoSize = true;
+            idCategoriaLabel.BackColor = System.Drawing.Color.Transparent;
             idCategoriaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idCategoriaLabel.Location = new System.Drawing.Point(43, 68);
             idCategoriaLabel.Name = "idCategoriaLabel";
@@ -132,6 +135,7 @@
             // costoUnitarioLabel
             // 
             costoUnitarioLabel.AutoSize = true;
+            costoUnitarioLabel.BackColor = System.Drawing.Color.Transparent;
             costoUnitarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             costoUnitarioLabel.Location = new System.Drawing.Point(10, 95);
             costoUnitarioLabel.Name = "costoUnitarioLabel";
@@ -142,6 +146,7 @@
             // precioUnitarioLabel
             // 
             precioUnitarioLabel.AutoSize = true;
+            precioUnitarioLabel.BackColor = System.Drawing.Color.Transparent;
             precioUnitarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             precioUnitarioLabel.Location = new System.Drawing.Point(5, 121);
             precioUnitarioLabel.Name = "precioUnitarioLabel";
@@ -152,6 +157,7 @@
             // stockLabel
             // 
             stockLabel.AutoSize = true;
+            stockLabel.BackColor = System.Drawing.Color.Transparent;
             stockLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             stockLabel.Location = new System.Drawing.Point(73, 147);
             stockLabel.Name = "stockLabel";
@@ -162,6 +168,7 @@
             // estadoLabel
             // 
             estadoLabel.AutoSize = true;
+            estadoLabel.BackColor = System.Drawing.Color.Transparent;
             estadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             estadoLabel.Location = new System.Drawing.Point(63, 173);
             estadoLabel.Name = "estadoLabel";
@@ -329,20 +336,20 @@
             this.aRTICULOSDataGridView.AllowUserToDeleteRows = false;
             this.aRTICULOSDataGridView.AllowUserToResizeColumns = false;
             this.aRTICULOSDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.aRTICULOSDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.aRTICULOSDataGridView.AutoGenerateColumns = false;
             this.aRTICULOSDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.aRTICULOSDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.aRTICULOSDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.aRTICULOSDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.aRTICULOSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.aRTICULOSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -413,7 +420,7 @@
             // descripcionTextBox
             // 
             this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "descripcion", true));
-            this.descripcionTextBox.Location = new System.Drawing.Point(130, 39);
+            this.descripcionTextBox.Location = new System.Drawing.Point(130, 37);
             this.descripcionTextBox.Name = "descripcionTextBox";
             this.descripcionTextBox.Size = new System.Drawing.Size(456, 23);
             this.descripcionTextBox.TabIndex = 5;
@@ -474,6 +481,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(this.idLabel2);
             this.groupBox1.Controls.Add(idLabel);
             this.groupBox1.Controls.Add(this.estadoComboBox);
@@ -498,9 +506,10 @@
             // 
             // idLabel2
             // 
+            this.idLabel2.BackColor = System.Drawing.Color.Transparent;
             this.idLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.aRTICULOSBindingSource, "id", true));
             this.idLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.idLabel2.Location = new System.Drawing.Point(127, 17);
+            this.idLabel2.Location = new System.Drawing.Point(127, 14);
             this.idLabel2.Name = "idLabel2";
             this.idLabel2.Size = new System.Drawing.Size(100, 23);
             this.idLabel2.TabIndex = 16;
@@ -508,6 +517,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
             this.groupBox2.Controls.Add(this.aRTICULOSDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(11, 349);
@@ -530,6 +540,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(30, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
@@ -545,6 +556,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.Controls.Add(this.txtDescripcion);
             this.groupBox3.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox3.Controls.Add(this.button1);
@@ -575,6 +587,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(885, 666);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);

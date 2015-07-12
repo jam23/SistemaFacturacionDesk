@@ -86,6 +86,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
+            descripcionLabel.BackColor = System.Drawing.Color.Transparent;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(34, 50);
             descripcionLabel.Name = "descripcionLabel";
@@ -96,6 +97,7 @@
             // cantidadDiasLabel
             // 
             cantidadDiasLabel.AutoSize = true;
+            cantidadDiasLabel.BackColor = System.Drawing.Color.Transparent;
             cantidadDiasLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             cantidadDiasLabel.Location = new System.Drawing.Point(10, 76);
             cantidadDiasLabel.Name = "cantidadDiasLabel";
@@ -106,6 +108,7 @@
             // estadoLabel
             // 
             estadoLabel.AutoSize = true;
+            estadoLabel.BackColor = System.Drawing.Color.Transparent;
             estadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             estadoLabel.Location = new System.Drawing.Point(61, 102);
             estadoLabel.Name = "estadoLabel";
@@ -116,6 +119,7 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
+            idLabel.BackColor = System.Drawing.Color.Transparent;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idLabel.Location = new System.Drawing.Point(95, 26);
             idLabel.Name = "idLabel";
@@ -208,6 +212,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
             this.groupBox2.Controls.Add(this.aRTICULOSDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(17, 287);
@@ -219,6 +224,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(idLabel);
             this.groupBox1.Controls.Add(this.idLabel1);
             this.groupBox1.Controls.Add(descripcionLabel);
@@ -237,6 +243,7 @@
             // 
             // idLabel1
             // 
+            this.idLabel1.BackColor = System.Drawing.Color.Transparent;
             this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cONDICIONESPAGOBindingSource, "id", true));
             this.idLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLabel1.Location = new System.Drawing.Point(127, 28);
@@ -278,7 +285,7 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(106, 28);
+            this.txtDescripcion.Location = new System.Drawing.Point(107, 29);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(405, 23);
             this.txtDescripcion.TabIndex = 21;
@@ -296,6 +303,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(23, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
@@ -304,6 +312,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.Controls.Add(this.txtDescripcion);
             this.groupBox3.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox3.Controls.Add(this.button1);
@@ -460,6 +469,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(889, 611);
             this.Controls.Add(this.cONDICIONESPAGOBindingNavigator);
             this.Controls.Add(this.groupBox2);

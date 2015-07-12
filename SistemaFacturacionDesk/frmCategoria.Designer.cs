@@ -82,6 +82,7 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
+            idLabel.BackColor = System.Drawing.Color.Transparent;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idLabel.Location = new System.Drawing.Point(98, 36);
             idLabel.Name = "idLabel";
@@ -92,6 +93,7 @@
             // descripcionLabel
             // 
             descripcionLabel.AutoSize = true;
+            descripcionLabel.BackColor = System.Drawing.Color.Transparent;
             descripcionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             descripcionLabel.Location = new System.Drawing.Point(28, 65);
             descripcionLabel.Name = "descripcionLabel";
@@ -102,6 +104,7 @@
             // estadoLabel
             // 
             estadoLabel.AutoSize = true;
+            estadoLabel.BackColor = System.Drawing.Color.Transparent;
             estadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             estadoLabel.Location = new System.Drawing.Point(62, 94);
             estadoLabel.Name = "estadoLabel";
@@ -111,6 +114,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackgroundImage = global::SistemaFacturacionDesk.Properties.Resources.frmBackgroundImage;
             this.groupBox2.Controls.Add(this.cATEGORIADataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 289);
@@ -187,6 +191,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackgroundImage = global::SistemaFacturacionDesk.Properties.Resources.frmBackgroundImage;
             this.groupBox3.Controls.Add(this.txtDescripcion);
             this.groupBox3.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox3.Controls.Add(this.button1);
@@ -229,6 +234,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(12, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
@@ -237,6 +243,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = global::SistemaFacturacionDesk.Properties.Resources.frmBackgroundImage;
             this.groupBox1.Controls.Add(idLabel);
             this.groupBox1.Controls.Add(this.idLabel1);
             this.groupBox1.Controls.Add(descripcionLabel);
@@ -244,7 +251,7 @@
             this.groupBox1.Controls.Add(estadoLabel);
             this.groupBox1.Controls.Add(this.estadoComboBox);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 128);
+            this.groupBox1.Location = new System.Drawing.Point(12, 123);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(598, 150);
             this.groupBox1.TabIndex = 19;
@@ -253,6 +260,7 @@
             // 
             // idLabel1
             // 
+            this.idLabel1.BackColor = System.Drawing.Color.Transparent;
             this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.cATEGORIABindingSource, "id", true));
             this.idLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLabel1.Location = new System.Drawing.Point(131, 36);
@@ -425,6 +433,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::SistemaFacturacionDesk.Properties.Resources.frmBackgroundImage;
             this.ClientSize = new System.Drawing.Size(630, 595);
             this.Controls.Add(this.cATEGORIABindingNavigator);
             this.Controls.Add(this.groupBox2);

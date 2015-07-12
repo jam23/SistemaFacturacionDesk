@@ -252,6 +252,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.Controls.Add(this.txtFilterValue);
             this.groupBox3.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox3.Controls.Add(this.button1);
@@ -273,7 +274,7 @@
             // 
             // btnLimpiarFiltros
             // 
-            this.btnLimpiarFiltros.Location = new System.Drawing.Point(552, 32);
+            this.btnLimpiarFiltros.Location = new System.Drawing.Point(552, 34);
             this.btnLimpiarFiltros.Name = "btnLimpiarFiltros";
             this.btnLimpiarFiltros.Size = new System.Drawing.Size(80, 26);
             this.btnLimpiarFiltros.TabIndex = 19;
@@ -294,6 +295,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(15, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 17);
@@ -304,12 +306,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(783, 373);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.cLIENTESDataGridView);
             this.Controls.Add(this.cLIENTESBindingNavigator);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmBusquedaCliente";
             this.Text = "Busqueda de Cliente";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmBusquedaCliente_FormClosing);
             this.Load += new System.EventHandler(this.frmBusquedaCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESBindingSource)).EndInit();

@@ -49,13 +49,29 @@ namespace SistemaFacturacionDesk.Busquedas
         {
             txtFilterValue.Clear();
             fillByNombreRazonCEDRNC(sender, e);
+            this.Visible = false;
+            this.Owner.Focus();
+
         }
 
         private void cLIENTESDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {            
+        {
             frmFacturacion form = (frmFacturacion)this.Owner;
-            form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+            if (e.RowIndex >= 0)
+            {
+                form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+            }
+            else
+            {
+                this.MensajeAdvertencia("Error al seleccionar cliente, favor intentar nuevamente.");
+            }
+
             this.Visible = false;
+        }
+
+        private void frmBusquedaCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Utilidades.PrevenirUsuarioCerrarVentana(e);
         }
     }
 }

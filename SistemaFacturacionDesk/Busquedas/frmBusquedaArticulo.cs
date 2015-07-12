@@ -19,8 +19,7 @@ namespace SistemaFacturacionDesk.Busquedas
 
         private void frmBusquedaArticulo_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'fACTURACIONDataSet.CATEGORIA' table. You can move, or remove it, as needed.
-            this.cATEGORIATableAdapter.Fill(this.fACTURACIONDataSet.CATEGORIA);
+          
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.ARTICULOS' table. You can move, or remove it, as needed.
             this.aRTICULOSTableAdapter.Fill(this.fACTURACIONDataSet.ARTICULOS);
             //this.aRTICULOSTableAdapter.FillByCategoriaDescripcion(this.fACTURACIONDataSet.ARTICULOS,0, "");
@@ -64,6 +63,7 @@ namespace SistemaFacturacionDesk.Busquedas
             txtFilterValue.Clear();
             fillByDescripcion(sender, e);
             this.Visible = false;
+            this.Owner.Focus();
         }
 
         private void frmBusquedaArticulo_VisibleChanged(object sender, EventArgs e)

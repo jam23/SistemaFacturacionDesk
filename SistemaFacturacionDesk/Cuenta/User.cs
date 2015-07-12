@@ -22,12 +22,15 @@ namespace SistemaFacturacionDesk
             {
                 if (instance == null)
                 {
-                    var user = new User();                    
-                    
+                    var user = new User();
+
                     using (EntitiesFACTURACION db = new EntitiesFACTURACION())
                     {
                         var v = db.VENDEDORES.Find(UserId); // Buscar el usuario que se esta logeando.
-
+                       
+                        user.Nombres = v.nombres;
+                        user.Apellido1 = v.apellido1;
+                        user.Apellido2 = v.apellido2;
                         user.IdUsuario = v.id;
                         user.IsAdmin = v.IsAdmin;
                     }
@@ -35,10 +38,20 @@ namespace SistemaFacturacionDesk
                     instance = user;
                 }
             }
-        } 
+        }
         #endregion
 
         public int IdUsuario;
+        public string Nombres;
+        public string Apellido1;
+        public string Apellido2;
+        public string NombreCompleto
+        {
+            get
+            {
+                return string.Format("{0} {1} {2}", Nombres, Apellido1, Apellido2);
+            }
+        }
         public bool IsAdmin;
         public static User UsuarioLogeado
         {
@@ -48,6 +61,6 @@ namespace SistemaFacturacionDesk
             }
 
         }
-        
+
     }
 }

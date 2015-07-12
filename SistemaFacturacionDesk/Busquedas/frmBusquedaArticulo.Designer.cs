@@ -31,10 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.cATEGORIABindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.cLIENTESDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,9 +44,7 @@
             this.aRTICULOSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.aRTICULOSTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.ARTICULOSTableAdapter();
             this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
-            this.cATEGORIATableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.CATEGORIATableAdapter();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cATEGORIABindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSBindingSource)).BeginInit();
@@ -73,17 +70,6 @@
             this.txtFilterValue.Size = new System.Drawing.Size(340, 23);
             this.txtFilterValue.TabIndex = 21;
             // 
-            // btnCancelar
-            // 
-            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancelar.Location = new System.Drawing.Point(638, 52);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(80, 26);
-            this.btnCancelar.TabIndex = 19;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
-            // 
             // btnFiltrar
             // 
             this.btnFiltrar.Location = new System.Drawing.Point(486, 29);
@@ -103,10 +89,16 @@
             this.label1.TabIndex = 20;
             this.label1.Text = "Buscar:";
             // 
-            // cATEGORIABindingSource
+            // btnCancelar
             // 
-            this.cATEGORIABindingSource.DataMember = "CATEGORIA";
-            this.cATEGORIABindingSource.DataSource = this.fACTURACIONDataSet;
+            this.btnCancelar.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCancelar.Location = new System.Drawing.Point(638, 52);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(80, 26);
+            this.btnCancelar.TabIndex = 19;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnLimpiarFiltros_Click);
             // 
             // fACTURACIONDataSet
             // 
@@ -193,10 +185,6 @@
             this.tableAdapterManager.UpdateOrder = SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VENDEDORESTableAdapter = null;
             // 
-            // cATEGORIATableAdapter
-            // 
-            this.cATEGORIATableAdapter.ClearBeforeFill = true;
-            // 
             // frmBusquedaArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,7 +204,6 @@
             this.VisibleChanged += new System.EventHandler(this.frmBusquedaArticulo_VisibleChanged);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.cATEGORIABindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cLIENTESDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.aRTICULOSBindingSource)).EndInit();
@@ -236,8 +223,6 @@
         private FACTURACIONDataSetTableAdapters.ARTICULOSTableAdapter aRTICULOSTableAdapter;
         private FACTURACIONDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.BindingSource cATEGORIABindingSource;
-        private FACTURACIONDataSetTableAdapters.CATEGORIATableAdapter cATEGORIATableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costoUnitarioDataGridViewTextBoxColumn;

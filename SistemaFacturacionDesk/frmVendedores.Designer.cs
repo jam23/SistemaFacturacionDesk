@@ -37,9 +37,9 @@
             System.Windows.Forms.Label contrasenaLabel;
             System.Windows.Forms.Label nombreUsuarioLabel;
             System.Windows.Forms.Label estadoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVendedores));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVendedores));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.vENDEDORESDataGridView = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -104,6 +104,7 @@
             // idLabel
             // 
             idLabel.AutoSize = true;
+            idLabel.BackColor = System.Drawing.Color.Transparent;
             idLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             idLabel.Location = new System.Drawing.Point(118, 25);
             idLabel.Name = "idLabel";
@@ -114,6 +115,7 @@
             // nombresLabel
             // 
             nombresLabel.AutoSize = true;
+            nombresLabel.BackColor = System.Drawing.Color.Transparent;
             nombresLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nombresLabel.Location = new System.Drawing.Point(74, 54);
             nombresLabel.Name = "nombresLabel";
@@ -124,6 +126,7 @@
             // apellido1Label
             // 
             apellido1Label.AutoSize = true;
+            apellido1Label.BackColor = System.Drawing.Color.Transparent;
             apellido1Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             apellido1Label.Location = new System.Drawing.Point(72, 83);
             apellido1Label.Name = "apellido1Label";
@@ -134,6 +137,7 @@
             // apellido2Label
             // 
             apellido2Label.AutoSize = true;
+            apellido2Label.BackColor = System.Drawing.Color.Transparent;
             apellido2Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             apellido2Label.Location = new System.Drawing.Point(353, 80);
             apellido2Label.Name = "apellido2Label";
@@ -144,6 +148,7 @@
             // porcientoComisionLabel
             // 
             porcientoComisionLabel.AutoSize = true;
+            porcientoComisionLabel.BackColor = System.Drawing.Color.Transparent;
             porcientoComisionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             porcientoComisionLabel.Location = new System.Drawing.Point(47, 112);
             porcientoComisionLabel.Name = "porcientoComisionLabel";
@@ -154,6 +159,7 @@
             // contrasenaLabel
             // 
             contrasenaLabel.AutoSize = true;
+            contrasenaLabel.BackColor = System.Drawing.Color.Transparent;
             contrasenaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contrasenaLabel.Location = new System.Drawing.Point(342, 163);
             contrasenaLabel.Name = "contrasenaLabel";
@@ -164,6 +170,7 @@
             // nombreUsuarioLabel
             // 
             nombreUsuarioLabel.AutoSize = true;
+            nombreUsuarioLabel.BackColor = System.Drawing.Color.Transparent;
             nombreUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nombreUsuarioLabel.Location = new System.Drawing.Point(28, 165);
             nombreUsuarioLabel.Name = "nombreUsuarioLabel";
@@ -174,6 +181,7 @@
             // estadoLabel
             // 
             estadoLabel.AutoSize = true;
+            estadoLabel.BackColor = System.Drawing.Color.Transparent;
             estadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             estadoLabel.Location = new System.Drawing.Point(375, 116);
             estadoLabel.Name = "estadoLabel";
@@ -183,6 +191,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
             this.groupBox2.Controls.Add(this.vENDEDORESDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 377);
@@ -307,6 +316,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
             this.groupBox1.Controls.Add(idLabel);
             this.groupBox1.Controls.Add(this.idLabel1);
             this.groupBox1.Controls.Add(nombresLabel);
@@ -334,6 +344,7 @@
             // 
             // idLabel1
             // 
+            this.idLabel1.BackColor = System.Drawing.Color.Transparent;
             this.idLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vENDEDORESBindingSource, "id", true));
             this.idLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.idLabel1.Location = new System.Drawing.Point(161, 22);
@@ -386,6 +397,7 @@
             // 
             // isAdminCheckBox
             // 
+            this.isAdminCheckBox.BackColor = System.Drawing.Color.Transparent;
             this.isAdminCheckBox.Checked = true;
             this.isAdminCheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
             this.isAdminCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("Checked", this.vENDEDORESBindingSource, "IsAdmin", true));
@@ -395,7 +407,7 @@
             this.isAdminCheckBox.Size = new System.Drawing.Size(168, 24);
             this.isAdminCheckBox.TabIndex = 13;
             this.isAdminCheckBox.Text = "Administrador";
-            this.isAdminCheckBox.UseVisualStyleBackColor = true;
+            this.isAdminCheckBox.UseVisualStyleBackColor = false;
             // 
             // nombreUsuarioTextBox
             // 
@@ -419,6 +431,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
             this.groupBox3.Controls.Add(this.txtFilterValue);
             this.groupBox3.Controls.Add(this.btnLimpiarFiltros);
             this.groupBox3.Controls.Add(this.button1);
@@ -461,6 +474,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(23, 31);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(86, 17);
@@ -611,6 +625,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(993, 702);
             this.Controls.Add(this.vENDEDORESBindingNavigator);
             this.Controls.Add(this.groupBox2);

@@ -21,9 +21,9 @@ namespace SistemaFacturacionDesk
     public static class Utilidades
     {
         #region Mensajes
-        public static void Mensaje(this Form form, string text = "", string caption = "", MessageBoxButtons buttons = MessageBoxButtons.OK, MessageBoxIcon icon = MessageBoxIcon.None)
+        public static DialogResult Mensaje(this Form form, string text = "", string caption = "", MessageBoxButtons buttons = MessageBoxButtons.OK, MessageBoxIcon icon = MessageBoxIcon.None)
         {
-            MessageBox.Show(form, text, caption, buttons, icon);
+           return MessageBox.Show(form, text, caption, buttons, icon);
         }
 
         public static void MensajeAdvertencia(this Form form, string text, string caption = "")
