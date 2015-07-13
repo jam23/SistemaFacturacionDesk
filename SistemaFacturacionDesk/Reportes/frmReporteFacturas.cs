@@ -22,6 +22,9 @@ namespace SistemaFacturacionDesk.Reportes
 
         private void frmReporteFacturas_Load(object sender, EventArgs e)
         {
+            fACTURASDataGridView.AutoGenerateColumns = false;
+            LimpiarDateTimePicker(new DateTimePicker[] { dtpDesde, dtpHasta });
+            CargarGridView(0, null, null);
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.FACTURAS' table. You can move, or remove it, as needed.
             this.fACTURASTableAdapter.Fill(this.fACTURACIONDataSet.FACTURAS);
 
@@ -52,6 +55,7 @@ namespace SistemaFacturacionDesk.Reportes
 
         private void dtpHasta_ValueChanged(object sender, EventArgs e)
         {
+            dtpHasta.Format = DateTimePickerFormat.Short;
             RangoFechaValido();
         }
 
@@ -66,16 +70,51 @@ namespace SistemaFacturacionDesk.Reportes
             return true;
         }
 
+        private void LimpiarDateTimePicker(DateTimePicker[] Pickers)
+        {
+            foreach (DateTimePicker item in Pickers)
+            {
+                item.ResetText();
+                item.Format = DateTimePickerFormat.Custom;
+                item.CustomFormat = " ";
+            }
+        }
+
         private void btnConsultar_Click(object sender, EventArgs e)
         {
-            try
+            // fACTURASDataGridView.AutoGenerateColumns = true;
+            int? IdCliente = String.IsNullOrEmpty(txtIdCliente.Text) ? 0 : int.Parse(txtIdCliente.Text);
+            DateTime? F_Desde = string.IsNullOrEmpty(dtpDesde.Text.Trim()) ? null : new System.Nullable<System.DateTime>(DateTime.Parse(dtpDesde.Text));// new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpDesde.Text, typeof(System.DateTime)))));
+            DateTime? F_Hasta = string.IsNullOrEmpty(dtpHasta.Text.Trim()) ? null : new System.Nullable<System.DateTime>(DateTime.Parse(dtpHasta.Text));//null : new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpHasta.Text, typeof(System.DateTime)))));
+
+            if (F_Desde == null && F_Hasta != null)
             {
-                this.fACTURASTableAdapter.ObtenerFacturasIdClienteRangoFecha(this.fACTURACIONDataSet.FACTURAS, new System.Nullable<int>(((int)(System.Convert.ChangeType(txtIdCliente.Text, typeof(int))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpDesde.Text, typeof(System.DateTime))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpHasta.Text, typeof(System.DateTime))))));
+                this.MensajeAdvertencia("Debe Especificar la fecha [Hasta]");
+                return;
             }
-            catch (System.Exception ex)
+            else if (F_Desde != null && F_Hasta == null)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                this.MensajeAdvertencia("Debe Especificar la fecha [Desde]");
+                return;
             }
+
+            if (!RangoFechaValido()) return;
+
+            CargarGridView(IdCliente, F_Desde, F_Hasta);
+
+            //try
+            //{
+            //    this.fACTURASTableAdapter.ObtenerFacturasIdClienteRangoFecha(this.fACTURACIONDataSet.FACTURAS, new System.Nullable<int>(((int)(System.Convert.ChangeType(txtIdCliente.Text, typeof(int))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpDesde.Text, typeof(System.DateTime))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpHasta.Text, typeof(System.DateTime))))));
+            //}
+            //catch (System.Exception ex)
+            //{
+            //    System.Windows.Forms.MessageBox.Show(ex.Message);
+            //}
+        }
+
+        private void CargarGridView(int? IdCliente, DateTime? F_Desde, DateTime? F_Hasta)
+        {
+            fACTURASDataGridView.DataSource = db.ObtenerFacturasIdClienteRangoFecha(IdCliente, F_Desde, F_Hasta);
         }
 
         private void CargarDatos()
@@ -132,33 +171,19 @@ LEFT JOIN VENDEDORES AS V
 
         }
 
-        private void obtenerFacturasIdClienteRangoFechaToolStripButton_Click(object sender, EventArgs e)
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
         {
-            try
-            {
-                this.fACTURASTableAdapter.ObtenerFacturasIdClienteRangoFecha(this.fACTURACIONDataSet.FACTURAS, new System.Nullable<int>(((int)(System.Convert.ChangeType(idClienteToolStripTextBox.Text, typeof(int))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(f_DesdeToolStripTextBox.Text, typeof(System.DateTime))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(f_HastaToolStripTextBox.Text, typeof(System.DateTime))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            dtpDesde.Format = DateTimePickerFormat.Short;
         }
 
-        private void obtenerFacturasIdClienteRangoFechaToolStripButton_Click_1(object sender, EventArgs e)
+        private void btnLimpiarFechas_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.fACTURASTableAdapter.ObtenerFacturasIdClienteRangoFecha(this.fACTURACIONDataSet.FACTURAS, new System.Nullable<int>(((int)(System.Convert.ChangeType(idClienteToolStripTextBox.Text, typeof(int))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(f_DesdeToolStripTextBox.Text, typeof(System.DateTime))))), new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(f_HastaToolStripTextBox.Text, typeof(System.DateTime))))));
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
+            LimpiarDateTimePicker(new DateTimePicker[] { dtpDesde, dtpHasta });
         }
 
-   
+
+
+
 
 
 

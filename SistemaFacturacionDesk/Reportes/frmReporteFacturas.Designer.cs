@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteFacturas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnLimpiarCliente = new System.Windows.Forms.Button();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
@@ -47,47 +48,45 @@
             this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.fACTURASTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.FACTURASTableAdapter();
             this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCondicionPagoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idVendedorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.porcentajeDescuentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iTBISDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaRegistroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comentarioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiarFechas = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreComercial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RNC_CED = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaRegistroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.condicionPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = global::SistemaFacturacionDesk.Properties.Resources.frmBackgroundImage;
-            this.groupBox1.Controls.Add(this.btnLimpiarCliente);
-            this.groupBox1.Controls.Add(this.btnBuscarCliente);
-            this.groupBox1.Controls.Add(this.txtIdCliente);
-            this.groupBox1.Controls.Add(this.txtNombreCliente);
-            this.groupBox1.Controls.Add(this.dtpHasta);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dtpDesde);
-            this.groupBox1.Controls.Add(this.lblCliente);
             this.groupBox1.Controls.Add(this.btnConsultar);
+            this.groupBox1.Controls.Add(this.groupBox3);
+            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Location = new System.Drawing.Point(16, 15);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1138, 91);
+            this.groupBox1.Size = new System.Drawing.Size(1138, 80);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Consulta";
             // 
             // btnLimpiarCliente
             // 
-            this.btnLimpiarCliente.Location = new System.Drawing.Point(439, 38);
+            this.btnLimpiarCliente.Location = new System.Drawing.Point(428, 14);
             this.btnLimpiarCliente.Name = "btnLimpiarCliente";
-            this.btnLimpiarCliente.Size = new System.Drawing.Size(86, 25);
+            this.btnLimpiarCliente.Size = new System.Drawing.Size(63, 25);
             this.btnLimpiarCliente.TabIndex = 5;
             this.btnLimpiarCliente.Text = "Limpiar";
             this.btnLimpiarCliente.UseVisualStyleBackColor = true;
@@ -95,9 +94,9 @@
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(349, 38);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(359, 14);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(86, 25);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(66, 25);
             this.btnBuscarCliente.TabIndex = 5;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
@@ -105,7 +104,7 @@
             // 
             // txtIdCliente
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(70, 39);
+            this.txtIdCliente.Location = new System.Drawing.Point(94, 15);
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.ReadOnly = true;
             this.txtIdCliente.Size = new System.Drawing.Size(48, 23);
@@ -113,16 +112,16 @@
             // 
             // txtNombreCliente
             // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(131, 39);
+            this.txtNombreCliente.Location = new System.Drawing.Point(170, 15);
             this.txtNombreCliente.Name = "txtNombreCliente";
             this.txtNombreCliente.ReadOnly = true;
-            this.txtNombreCliente.Size = new System.Drawing.Size(205, 23);
+            this.txtNombreCliente.Size = new System.Drawing.Size(179, 23);
             this.txtNombreCliente.TabIndex = 4;
             // 
             // dtpHasta
             // 
             this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpHasta.Location = new System.Drawing.Point(858, 39);
+            this.dtpHasta.Location = new System.Drawing.Point(279, 16);
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(139, 23);
             this.dtpHasta.TabIndex = 3;
@@ -133,7 +132,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(800, 42);
+            this.label2.Location = new System.Drawing.Point(221, 19);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 17);
             this.label2.TabIndex = 1;
@@ -144,7 +143,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(588, 42);
+            this.label1.Location = new System.Drawing.Point(9, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(59, 17);
             this.label1.TabIndex = 1;
@@ -153,19 +152,22 @@
             // dtpDesde
             // 
             this.dtpDesde.Checked = false;
+            this.dtpDesde.CustomFormat = "";
             this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(648, 39);
+            this.dtpDesde.Location = new System.Drawing.Point(69, 16);
             this.dtpDesde.MinDate = new System.DateTime(1844, 1, 1, 0, 0, 0, 0);
             this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(139, 23);
+            this.dtpDesde.Size = new System.Drawing.Size(146, 23);
             this.dtpDesde.TabIndex = 3;
+            this.dtpDesde.Value = new System.DateTime(1844, 2, 27, 0, 0, 0, 0);
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(5, 42);
+            this.lblCliente.Location = new System.Drawing.Point(16, 18);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(63, 17);
             this.lblCliente.TabIndex = 1;
@@ -173,7 +175,7 @@
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(1010, 36);
+            this.btnConsultar.Location = new System.Drawing.Point(1035, 32);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(94, 29);
             this.btnConsultar.TabIndex = 0;
@@ -187,43 +189,42 @@
             this.fACTURASDataGridView.AllowUserToDeleteRows = false;
             this.fACTURASDataGridView.AllowUserToResizeColumns = false;
             this.fACTURASDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.fACTURASDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            this.fACTURASDataGridView.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.fACTURASDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.fACTURASDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.fACTURASDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.fACTURASDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.fACTURASDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.fACTURASDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.fACTURASDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.fACTURASDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.idCondicionPagoDataGridViewTextBoxColumn,
-            this.idVendedorDataGridViewTextBoxColumn,
-            this.idClienteDataGridViewTextBoxColumn,
-            this.porcentajeDescuentoDataGridViewTextBoxColumn,
-            this.iTBISDataGridViewTextBoxColumn,
-            this.fechaRegistroDataGridViewTextBoxColumn,
-            this.comentarioDataGridViewTextBoxColumn});
-            this.fACTURASDataGridView.DataSource = this.fACTURASBindingSource;
+            this.idFactura,
+            this.idVendedor,
+            this.nombreVendedor,
+            this.idCliente,
+            this.nombreComercial,
+            this.RNC_CED,
+            this.fechaRegistroFactura,
+            this.condicionPago});
             this.fACTURASDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.fACTURASDataGridView.Location = new System.Drawing.Point(24, 130);
+            this.fACTURASDataGridView.Location = new System.Drawing.Point(19, 114);
+            this.fACTURASDataGridView.MultiSelect = false;
             this.fACTURASDataGridView.Name = "fACTURASDataGridView";
             this.fACTURASDataGridView.ReadOnly = true;
             this.fACTURASDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.fACTURASDataGridView.Size = new System.Drawing.Size(1130, 438);
+            this.fACTURASDataGridView.Size = new System.Drawing.Size(1135, 438);
             this.fACTURASDataGridView.TabIndex = 2;
             // 
             // fACTURASBindingSource
             // 
-            this.fACTURASBindingSource.DataMember = "FACTURAS";
             this.fACTURASBindingSource.DataSource = this.fACTURACIONDataSet;
+            this.fACTURASBindingSource.Position = 0;
             // 
             // fACTURACIONDataSet
             // 
@@ -241,66 +242,120 @@
             this.tableAdapterManager.CATEGORIATableAdapter = null;
             this.tableAdapterManager.CLIENTESTableAdapter = null;
             this.tableAdapterManager.CONDICIONESPAGOTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.DETALLE_FACTURATableAdapter = null;
-        
+            this.tableAdapterManager.FACTURASTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VENDEDORESTableAdapter = null;
             // 
-            // idDataGridViewTextBoxColumn
+            // btnLimpiarFechas
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.btnLimpiarFechas.Location = new System.Drawing.Point(431, 15);
+            this.btnLimpiarFechas.Name = "btnLimpiarFechas";
+            this.btnLimpiarFechas.Size = new System.Drawing.Size(66, 25);
+            this.btnLimpiarFechas.TabIndex = 5;
+            this.btnLimpiarFechas.Text = "Limpiar";
+            this.btnLimpiarFechas.UseVisualStyleBackColor = true;
+            this.btnLimpiarFechas.Click += new System.EventHandler(this.btnLimpiarFechas_Click);
             // 
-            // idCondicionPagoDataGridViewTextBoxColumn
+            // groupBox2
             // 
-            this.idCondicionPagoDataGridViewTextBoxColumn.DataPropertyName = "idCondicionPago";
-            this.idCondicionPagoDataGridViewTextBoxColumn.HeaderText = "idCondicionPago";
-            this.idCondicionPagoDataGridViewTextBoxColumn.Name = "idCondicionPagoDataGridViewTextBoxColumn";
-            this.idCondicionPagoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.Controls.Add(this.btnBuscarCliente);
+            this.groupBox2.Controls.Add(this.btnLimpiarCliente);
+            this.groupBox2.Controls.Add(this.lblCliente);
+            this.groupBox2.Controls.Add(this.txtNombreCliente);
+            this.groupBox2.Controls.Add(this.txtIdCliente);
+            this.groupBox2.Location = new System.Drawing.Point(17, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(495, 52);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
             // 
-            // idVendedorDataGridViewTextBoxColumn
+            // groupBox3
             // 
-            this.idVendedorDataGridViewTextBoxColumn.DataPropertyName = "idVendedor";
-            this.idVendedorDataGridViewTextBoxColumn.HeaderText = "idVendedor";
-            this.idVendedorDataGridViewTextBoxColumn.Name = "idVendedorDataGridViewTextBoxColumn";
-            this.idVendedorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
+            this.groupBox3.Controls.Add(this.btnLimpiarFechas);
+            this.groupBox3.Controls.Add(this.dtpHasta);
+            this.groupBox3.Controls.Add(this.dtpDesde);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(522, 18);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(505, 52);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
             // 
-            // idClienteDataGridViewTextBoxColumn
+            // idFactura
             // 
-            this.idClienteDataGridViewTextBoxColumn.DataPropertyName = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.HeaderText = "idCliente";
-            this.idClienteDataGridViewTextBoxColumn.Name = "idClienteDataGridViewTextBoxColumn";
-            this.idClienteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idFactura.DataPropertyName = "idFactura";
+            this.idFactura.FillWeight = 70F;
+            this.idFactura.HeaderText = "Id Factura";
+            this.idFactura.Name = "idFactura";
+            this.idFactura.ReadOnly = true;
+            this.idFactura.Width = 96;
             // 
-            // porcentajeDescuentoDataGridViewTextBoxColumn
+            // idVendedor
             // 
-            this.porcentajeDescuentoDataGridViewTextBoxColumn.DataPropertyName = "PorcentajeDescuento";
-            this.porcentajeDescuentoDataGridViewTextBoxColumn.HeaderText = "PorcentajeDescuento";
-            this.porcentajeDescuentoDataGridViewTextBoxColumn.Name = "porcentajeDescuentoDataGridViewTextBoxColumn";
-            this.porcentajeDescuentoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idVendedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idVendedor.DataPropertyName = "idVendedor";
+            this.idVendedor.HeaderText = "Id Vendedor";
+            this.idVendedor.Name = "idVendedor";
+            this.idVendedor.ReadOnly = true;
+            this.idVendedor.Width = 110;
             // 
-            // iTBISDataGridViewTextBoxColumn
+            // nombreVendedor
             // 
-            this.iTBISDataGridViewTextBoxColumn.DataPropertyName = "ITBIS";
-            this.iTBISDataGridViewTextBoxColumn.HeaderText = "ITBIS";
-            this.iTBISDataGridViewTextBoxColumn.Name = "iTBISDataGridViewTextBoxColumn";
-            this.iTBISDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreVendedor.DataPropertyName = "nombreVendedor";
+            this.nombreVendedor.FillWeight = 120F;
+            this.nombreVendedor.HeaderText = "Vendedor";
+            this.nombreVendedor.Name = "nombreVendedor";
+            this.nombreVendedor.ReadOnly = true;
             // 
-            // fechaRegistroDataGridViewTextBoxColumn
+            // idCliente
             // 
-            this.fechaRegistroDataGridViewTextBoxColumn.DataPropertyName = "fechaRegistro";
-            this.fechaRegistroDataGridViewTextBoxColumn.HeaderText = "fechaRegistro";
-            this.fechaRegistroDataGridViewTextBoxColumn.Name = "fechaRegistroDataGridViewTextBoxColumn";
-            this.fechaRegistroDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idCliente.DataPropertyName = "idCliente";
+            this.idCliente.HeaderText = "Id Cliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.ReadOnly = true;
+            this.idCliente.Width = 91;
             // 
-            // comentarioDataGridViewTextBoxColumn
+            // nombreComercial
             // 
-            this.comentarioDataGridViewTextBoxColumn.DataPropertyName = "comentario";
-            this.comentarioDataGridViewTextBoxColumn.HeaderText = "comentario";
-            this.comentarioDataGridViewTextBoxColumn.Name = "comentarioDataGridViewTextBoxColumn";
-            this.comentarioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreComercial.DataPropertyName = "nombreComercial";
+            this.nombreComercial.FillWeight = 120F;
+            this.nombreComercial.HeaderText = "Nombre Comercial";
+            this.nombreComercial.Name = "nombreComercial";
+            this.nombreComercial.ReadOnly = true;
+            // 
+            // RNC_CED
+            // 
+            this.RNC_CED.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.RNC_CED.DataPropertyName = "RNC_CED";
+            this.RNC_CED.HeaderText = "RNC/CED";
+            this.RNC_CED.Name = "RNC_CED";
+            this.RNC_CED.ReadOnly = true;
+            this.RNC_CED.Width = 94;
+            // 
+            // fechaRegistroFactura
+            // 
+            this.fechaRegistroFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.fechaRegistroFactura.DataPropertyName = "fechaRegistroFactura";
+            this.fechaRegistroFactura.HeaderText = "Fecha Registro";
+            this.fechaRegistroFactura.Name = "fechaRegistroFactura";
+            this.fechaRegistroFactura.ReadOnly = true;
+            this.fechaRegistroFactura.Width = 118;
+            // 
+            // condicionPago
+            // 
+            this.condicionPago.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.condicionPago.DataPropertyName = "condicionPago";
+            this.condicionPago.HeaderText = "Condición Pago";
+            this.condicionPago.Name = "condicionPago";
+            this.condicionPago.ReadOnly = true;
+            this.condicionPago.Width = 121;
             // 
             // frmReporteFacturas
             // 
@@ -320,10 +375,13 @@
             this.Text = "Reporte Facturas por Cliente";
             this.Load += new System.EventHandler(this.frmReporteFacturas_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -346,13 +404,16 @@
         private System.Windows.Forms.BindingSource fACTURASBindingSource;
         private FACTURACIONDataSetTableAdapters.FACTURASTableAdapter fACTURASTableAdapter;
         private FACTURACIONDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCondicionPagoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idVendedorDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idClienteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn porcentajeDescuentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iTBISDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn comentarioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnLimpiarFechas;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreVendedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreComercial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RNC_CED;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn condicionPago;
     }
 }

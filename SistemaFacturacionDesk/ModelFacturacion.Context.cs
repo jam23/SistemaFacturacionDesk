@@ -12,6 +12,9 @@ namespace SistemaFacturacionDesk
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class EntitiesFACTURACION : DbContext
     {
@@ -32,5 +35,22 @@ namespace SistemaFacturacionDesk
         public DbSet<DETALLE_FACTURA> DETALLE_FACTURA { get; set; }
         public DbSet<FACTURAS> FACTURAS { get; set; }
         public DbSet<VENDEDORES> VENDEDORES { get; set; }
+    
+        public virtual ObjectResult<ObtenerFacturasIdClienteRangoFecha_Result> ObtenerFacturasIdClienteRangoFecha(Nullable<int> idCliente, Nullable<System.DateTime> f_Desde, Nullable<System.DateTime> f_Hasta)
+        {
+            var idClienteParameter = idCliente.HasValue ?
+                new ObjectParameter("idCliente", idCliente) :
+                new ObjectParameter("idCliente", typeof(int));
+    
+            var f_DesdeParameter = f_Desde.HasValue ?
+                new ObjectParameter("F_Desde", f_Desde) :
+                new ObjectParameter("F_Desde", typeof(System.DateTime));
+    
+            var f_HastaParameter = f_Hasta.HasValue ?
+                new ObjectParameter("F_Hasta", f_Hasta) :
+                new ObjectParameter("F_Hasta", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerFacturasIdClienteRangoFecha_Result>("ObtenerFacturasIdClienteRangoFecha", idClienteParameter, f_DesdeParameter, f_HastaParameter);
+        }
     }
 }

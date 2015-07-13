@@ -189,6 +189,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="ObtenerFacturasIdClienteRangoFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idCliente" Type="int" Mode="In" />
+          <Parameter Name="F_Desde" Type="datetime" Mode="In" />
+          <Parameter Name="F_Hasta" Type="datetime" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -225,6 +230,11 @@
             <End Role="VENDEDORES" EntitySet="VENDEDORES" />
             <End Role="FACTURAS" EntitySet="FACTURAS" />
           </AssociationSet>
+          <FunctionImport Name="ObtenerFacturasIdClienteRangoFecha" ReturnType="Collection(FACTURACIONModel.ObtenerFacturasIdClienteRangoFecha_Result)">
+            <Parameter Name="idCliente" Mode="In" Type="Int32" />
+            <Parameter Name="F_Desde" Mode="In" Type="DateTime" />
+            <Parameter Name="F_Hasta" Mode="In" Type="DateTime" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="ARTICULOS">
           <Key>
@@ -389,6 +399,32 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="ObtenerFacturasIdClienteRangoFecha_Result">
+          <Property Type="Int32" Name="idFactura" Nullable="false" />
+          <Property Type="Int32" Name="idVendedor" Nullable="false" />
+          <Property Type="String" Name="nombreVendedor" Nullable="true" MaxLength="152" />
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="razonSocial" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="nombreComercial" Nullable="true" MaxLength="500" />
+          <Property Type="String" Name="RNC_CED" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="cuentaContable" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="10" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="80" />
+          <Property Type="String" Name="comentarioFactura" Nullable="true" MaxLength="3000" />
+          <Property Type="DateTime" Name="fechaRegistroFactura" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="itbisFactura" Nullable="false" />
+          <Property Type="Int32" Name="descuentoFactura" Nullable="false" />
+          <Property Type="String" Name="condicionPago" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="cantidadDias" Nullable="true" />
+          <Property Type="Int32" Name="idArticulo" Nullable="true" />
+          <Property Type="String" Name="descripcionArticulo" Nullable="true" MaxLength="100" />
+          <Property Type="Double" Name="costoUnitarioArticulo" Nullable="true" />
+          <Property Type="Double" Name="precioUnitarioArticulo" Nullable="true" />
+          <Property Type="Int32" Name="cantidadFacturado" Nullable="true" />
+          <Property Type="Double" Name="precioUnitarioFacturado" Nullable="true" />
+          <Property Type="String" Name="descripcionCategoriaArticulo" Nullable="true" MaxLength="100" />
+          <Property Type="Int32" Name="idCategoria" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -480,6 +516,36 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="ObtenerFacturasIdClienteRangoFecha" FunctionName="FACTURACIONModel.Store.ObtenerFacturasIdClienteRangoFecha">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="FACTURACIONModel.ObtenerFacturasIdClienteRangoFecha_Result">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idVendedor" ColumnName="idVendedor" />
+                <ScalarProperty Name="nombreVendedor" ColumnName="nombreVendedor" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="razonSocial" ColumnName="razonSocial" />
+                <ScalarProperty Name="nombreComercial" ColumnName="nombreComercial" />
+                <ScalarProperty Name="RNC_CED" ColumnName="RNC_CED" />
+                <ScalarProperty Name="cuentaContable" ColumnName="cuentaContable" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="comentarioFactura" ColumnName="comentarioFactura" />
+                <ScalarProperty Name="fechaRegistroFactura" ColumnName="fechaRegistroFactura" />
+                <ScalarProperty Name="itbisFactura" ColumnName="itbisFactura" />
+                <ScalarProperty Name="descuentoFactura" ColumnName="descuentoFactura" />
+                <ScalarProperty Name="condicionPago" ColumnName="condicionPago" />
+                <ScalarProperty Name="cantidadDias" ColumnName="cantidadDias" />
+                <ScalarProperty Name="idArticulo" ColumnName="idArticulo" />
+                <ScalarProperty Name="descripcionArticulo" ColumnName="descripcionArticulo" />
+                <ScalarProperty Name="costoUnitarioArticulo" ColumnName="costoUnitarioArticulo" />
+                <ScalarProperty Name="precioUnitarioArticulo" ColumnName="precioUnitarioArticulo" />
+                <ScalarProperty Name="cantidadFacturado" ColumnName="cantidadFacturado" />
+                <ScalarProperty Name="precioUnitarioFacturado" ColumnName="precioUnitarioFacturado" />
+                <ScalarProperty Name="descripcionCategoriaArticulo" ColumnName="descripcionCategoriaArticulo" />
+                <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
