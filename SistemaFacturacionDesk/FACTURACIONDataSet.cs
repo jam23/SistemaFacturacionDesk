@@ -7,3 +7,10 @@
         }
     }
 }
+
+namespace SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters {
+    
+    
+    public partial class FACTURASTableAdapter {
+    }
+}

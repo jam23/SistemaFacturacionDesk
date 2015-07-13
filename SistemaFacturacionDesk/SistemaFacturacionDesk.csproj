@@ -293,6 +293,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\BuscarClientePNG.png" />
     <None Include="Resources\bg.jpg" />
     <None Include="App_Data\FACTURACION.mdf">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

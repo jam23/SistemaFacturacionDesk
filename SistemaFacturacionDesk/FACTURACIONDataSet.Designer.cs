@@ -40,15 +40,15 @@ namespace SistemaFacturacionDesk {
         
         private global::System.Data.DataRelation relationFK_VENDEDOR;
         
-        private global::System.Data.DataRelation relationFK_CONDICION_PAGO;
-        
         private global::System.Data.DataRelation relationFK_CLIENTE;
-        
-        private global::System.Data.DataRelation relationFK_FACTURAS;
         
         private global::System.Data.DataRelation relationFK_ARTICULOS1;
         
         private global::System.Data.DataRelation relationFK_CATEGORIA1;
+        
+        private global::System.Data.DataRelation relationFK_CONDICION_PAGO;
+        
+        private global::System.Data.DataRelation relationFK_FACTURAS;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -351,11 +351,11 @@ namespace SistemaFacturacionDesk {
                 }
             }
             this.relationFK_VENDEDOR = this.Relations["FK_VENDEDOR"];
-            this.relationFK_CONDICION_PAGO = this.Relations["FK_CONDICION_PAGO"];
             this.relationFK_CLIENTE = this.Relations["FK_CLIENTE"];
-            this.relationFK_FACTURAS = this.Relations["FK_FACTURAS"];
             this.relationFK_ARTICULOS1 = this.Relations["FK_ARTICULOS1"];
             this.relationFK_CATEGORIA1 = this.Relations["FK_CATEGORIA1"];
+            this.relationFK_CONDICION_PAGO = this.Relations["FK_CONDICION_PAGO"];
+            this.relationFK_FACTURAS = this.Relations["FK_FACTURAS"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -384,18 +384,10 @@ namespace SistemaFacturacionDesk {
                         this.tableVENDEDORES.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableFACTURAS.idVendedorColumn}, false);
             this.Relations.Add(this.relationFK_VENDEDOR);
-            this.relationFK_CONDICION_PAGO = new global::System.Data.DataRelation("FK_CONDICION_PAGO", new global::System.Data.DataColumn[] {
-                        this.tableCONDICIONESPAGO.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableFACTURAS.idCondicionPagoColumn}, false);
-            this.Relations.Add(this.relationFK_CONDICION_PAGO);
             this.relationFK_CLIENTE = new global::System.Data.DataRelation("FK_CLIENTE", new global::System.Data.DataColumn[] {
                         this.tableCLIENTES.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableFACTURAS.idClienteColumn}, false);
             this.Relations.Add(this.relationFK_CLIENTE);
-            this.relationFK_FACTURAS = new global::System.Data.DataRelation("FK_FACTURAS", new global::System.Data.DataColumn[] {
-                        this.tableFACTURAS.idColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDETALLE_FACTURA.idFacturaColumn}, false);
-            this.Relations.Add(this.relationFK_FACTURAS);
             this.relationFK_ARTICULOS1 = new global::System.Data.DataRelation("FK_ARTICULOS1", new global::System.Data.DataColumn[] {
                         this.tableARTICULOS.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableDETALLE_FACTURA.idArticuloColumn}, false);
@@ -404,6 +396,14 @@ namespace SistemaFacturacionDesk {
                         this.tableCATEGORIA.idColumn}, new global::System.Data.DataColumn[] {
                         this.tableARTICULOS.idCategoriaColumn}, false);
             this.Relations.Add(this.relationFK_CATEGORIA1);
+            this.relationFK_CONDICION_PAGO = new global::System.Data.DataRelation("FK_CONDICION_PAGO", new global::System.Data.DataColumn[] {
+                        this.tableCONDICIONESPAGO.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableFACTURAS.idCondicionPagoColumn}, false);
+            this.Relations.Add(this.relationFK_CONDICION_PAGO);
+            this.relationFK_FACTURAS = new global::System.Data.DataRelation("FK_FACTURAS", new global::System.Data.DataColumn[] {
+                        this.tableFACTURAS.idColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDETALLE_FACTURA.idFacturaColumn}, false);
+            this.Relations.Add(this.relationFK_FACTURAS);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1994,13 +1994,6 @@ namespace SistemaFacturacionDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FACTURASRow FindByid(int id) {
-                return ((FACTURASRow)(this.Rows.Find(new object[] {
-                            id})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 FACTURASDataTable cln = ((FACTURASDataTable)(base.Clone()));
                 cln.InitVars();
@@ -2046,7 +2039,7 @@ namespace SistemaFacturacionDesk {
                 this.columncomentario = new global::System.Data.DataColumn("comentario", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncomentario);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
+                                this.columnid}, false));
                 this.columnid.AutoIncrement = true;
                 this.columnid.AutoIncrementSeed = -1;
                 this.columnid.AutoIncrementStep = -1;
@@ -3252,23 +3245,23 @@ namespace SistemaFacturacionDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public FACTURASRow FACTURASRow {
-                get {
-                    return ((FACTURASRow)(this.GetParentRow(this.Table.ParentRelations["FK_FACTURAS"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_FACTURAS"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ARTICULOSRow ARTICULOSRow {
                 get {
                     return ((ARTICULOSRow)(this.GetParentRow(this.Table.ParentRelations["FK_ARTICULOS1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ARTICULOS1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public FACTURASRow FACTURASRow {
+                get {
+                    return ((FACTURASRow)(this.GetParentRow(this.Table.ParentRelations["FK_FACTURAS"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_FACTURAS"]);
                 }
             }
         }
@@ -3393,23 +3386,23 @@ namespace SistemaFacturacionDesk {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CONDICIONESPAGORow CONDICIONESPAGORow {
-                get {
-                    return ((CONDICIONESPAGORow)(this.GetParentRow(this.Table.ParentRelations["FK_CONDICION_PAGO"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_CONDICION_PAGO"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public CLIENTESRow CLIENTESRow {
                 get {
                     return ((CLIENTESRow)(this.GetParentRow(this.Table.ParentRelations["FK_CLIENTE"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_CLIENTE"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public CONDICIONESPAGORow CONDICIONESPAGORow {
+                get {
+                    return ((CONDICIONESPAGORow)(this.GetParentRow(this.Table.ParentRelations["FK_CONDICION_PAGO"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_CONDICION_PAGO"]);
                 }
             }
             
@@ -5737,12 +5730,20 @@ SELECT id, idCondicionPago, idVendedor, idCliente, PorcentajeDescuento, ITBIS, f
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, idCondicionPago, idVendedor, idCliente, PorcentajeDescuento, ITBIS, fe" +
                 "chaRegistro, comentario FROM dbo.FACTURAS";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.ObtenerFacturasIdClienteRangoFecha";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@idCliente", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@F_Desde", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@F_Hasta", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 23, 3, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5767,6 +5768,37 @@ SELECT id, idCondicionPago, idVendedor, idCliente, PorcentajeDescuento, ITBIS, f
             FACTURACIONDataSet.FACTURASDataTable dataTable = new FACTURACIONDataSet.FACTURASDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int ObtenerFacturasIdClienteRangoFecha(FACTURACIONDataSet.FACTURASDataTable dataTable, global::System.Nullable<int> idCliente, global::System.Nullable<global::System.DateTime> F_Desde, global::System.Nullable<global::System.DateTime> F_Hasta) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((idCliente.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(idCliente.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((F_Desde.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((System.DateTime)(F_Desde.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((F_Hasta.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((System.DateTime)(F_Hasta.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5930,14 +5962,6 @@ SELECT id, idCondicionPago, idVendedor, idCliente, PorcentajeDescuento, ITBIS, f
                     this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int idCondicionPago, int idVendedor, int idCliente, int PorcentajeDescuento, int ITBIS, System.DateTime fechaRegistro, string comentario, int Original_id, int Original_idCondicionPago, int Original_idVendedor, int Original_idCliente, int Original_PorcentajeDescuento, int Original_ITBIS, System.DateTime Original_fechaRegistro, string Original_comentario) {
-            return this.Update(idCondicionPago, idVendedor, idCliente, PorcentajeDescuento, ITBIS, fechaRegistro, comentario, Original_id, Original_idCondicionPago, Original_idVendedor, Original_idCliente, Original_PorcentajeDescuento, Original_ITBIS, Original_fechaRegistro, Original_comentario, Original_id);
         }
     }
     

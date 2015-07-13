@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaFacturacionDesk.Reportes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace SistemaFacturacionDesk.Busquedas
 {
     public partial class frmBusquedaCliente : Form
     {
+
         public frmBusquedaCliente()
         {
             InitializeComponent();
@@ -56,10 +58,24 @@ namespace SistemaFacturacionDesk.Busquedas
 
         private void cLIENTESDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            frmFacturacion form = (frmFacturacion)this.Owner;
+
+           
             if (e.RowIndex >= 0)
             {
-                form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                if (this.Owner.GetType() == typeof(frmFacturacion))
+                {
+                    frmFacturacion form = (frmFacturacion)this.Owner;
+                    form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                }
+                else if (this.Owner.GetType() == typeof(Reportes.frmReporteFacturas))
+                {
+                    frmReporteFacturas form = (frmReporteFacturas)this.Owner;
+                    form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
+                }
+
+
+
+               
             }
             else
             {
