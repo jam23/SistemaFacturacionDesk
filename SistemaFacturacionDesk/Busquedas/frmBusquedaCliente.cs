@@ -67,9 +67,9 @@ namespace SistemaFacturacionDesk.Busquedas
                     frmFacturacion form = (frmFacturacion)this.Owner;
                     form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 }
-                else if (this.Owner.GetType() == typeof(Reportes.frmReporteFacturas))
+                else if (this.Owner.GetType() == typeof(Reportes.frmConsultaReporteFacturas))
                 {
-                    frmReporteFacturas form = (frmReporteFacturas)this.Owner;
+                    frmConsultaReporteFacturas form = (frmConsultaReporteFacturas)this.Owner;
                     form.SetearCliente(int.Parse(cLIENTESDataGridView.Rows[e.RowIndex].Cells[0].Value.ToString()));
                 }
 

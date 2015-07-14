@@ -190,6 +190,7 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="ObtenerFacturasIdClienteRangoFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdFactura" Type="int" Mode="In" />
           <Parameter Name="idCliente" Type="int" Mode="In" />
           <Parameter Name="F_Desde" Type="datetime" Mode="In" />
           <Parameter Name="F_Hasta" Type="datetime" Mode="In" />
@@ -231,6 +232,7 @@
             <End Role="FACTURAS" EntitySet="FACTURAS" />
           </AssociationSet>
           <FunctionImport Name="ObtenerFacturasIdClienteRangoFecha" ReturnType="Collection(FACTURACIONModel.ObtenerFacturasIdClienteRangoFecha_Result)">
+            <Parameter Name="IdFactura" Mode="In" Type="Int32" />
             <Parameter Name="idCliente" Mode="In" Type="Int32" />
             <Parameter Name="F_Desde" Mode="In" Type="DateTime" />
             <Parameter Name="F_Hasta" Mode="In" Type="DateTime" />

@@ -1,6 +1,6 @@
 ﻿namespace SistemaFacturacionDesk.Reportes
 {
-    partial class frmReporteFacturas
+    partial class frmConsultaReporteFacturas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaReporteFacturas));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmReporteFacturas));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnLimpiarCliente = new System.Windows.Forms.Button();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.txtIdCliente = new System.Windows.Forms.TextBox();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnLimpiarFechas = new System.Windows.Forms.Button();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.lblCliente = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.fACTURASDataGridView = new System.Windows.Forms.DataGridView();
-            this.fACTURASBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
-            this.fACTURASTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.FACTURASTableAdapter();
-            this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
-            this.btnLimpiarFechas = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.btnLimpiarCliente = new System.Windows.Forms.Button();
+            this.lblCliente = new System.Windows.Forms.Label();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.fACTURASDataGridView = new System.Windows.Forms.DataGridView();
             this.idFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreVendedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,12 +55,16 @@
             this.RNC_CED = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaRegistroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.condicionPago = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fACTURASBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
+            this.fACTURASTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.FACTURASTableAdapter();
+            this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
             this.groupBox1.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -82,41 +82,39 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtros de Consulta";
             // 
-            // btnLimpiarCliente
+            // btnConsultar
             // 
-            this.btnLimpiarCliente.Location = new System.Drawing.Point(428, 14);
-            this.btnLimpiarCliente.Name = "btnLimpiarCliente";
-            this.btnLimpiarCliente.Size = new System.Drawing.Size(63, 25);
-            this.btnLimpiarCliente.TabIndex = 5;
-            this.btnLimpiarCliente.Text = "Limpiar";
-            this.btnLimpiarCliente.UseVisualStyleBackColor = true;
-            this.btnLimpiarCliente.Click += new System.EventHandler(this.btnLimpiarCliente_Click);
+            this.btnConsultar.Location = new System.Drawing.Point(1035, 32);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(94, 29);
+            this.btnConsultar.TabIndex = 0;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // btnBuscarCliente
+            // groupBox3
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(359, 14);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(66, 25);
-            this.btnBuscarCliente.TabIndex = 5;
-            this.btnBuscarCliente.Text = "Buscar";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
+            this.groupBox3.Controls.Add(this.btnLimpiarFechas);
+            this.groupBox3.Controls.Add(this.dtpHasta);
+            this.groupBox3.Controls.Add(this.dtpDesde);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Location = new System.Drawing.Point(522, 18);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(505, 52);
+            this.groupBox3.TabIndex = 3;
+            this.groupBox3.TabStop = false;
             // 
-            // txtIdCliente
+            // btnLimpiarFechas
             // 
-            this.txtIdCliente.Location = new System.Drawing.Point(94, 15);
-            this.txtIdCliente.Name = "txtIdCliente";
-            this.txtIdCliente.ReadOnly = true;
-            this.txtIdCliente.Size = new System.Drawing.Size(48, 23);
-            this.txtIdCliente.TabIndex = 4;
-            // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(170, 15);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.ReadOnly = true;
-            this.txtNombreCliente.Size = new System.Drawing.Size(179, 23);
-            this.txtNombreCliente.TabIndex = 4;
+            this.btnLimpiarFechas.Location = new System.Drawing.Point(431, 15);
+            this.btnLimpiarFechas.Name = "btnLimpiarFechas";
+            this.btnLimpiarFechas.Size = new System.Drawing.Size(66, 25);
+            this.btnLimpiarFechas.TabIndex = 5;
+            this.btnLimpiarFechas.Text = "Limpiar";
+            this.btnLimpiarFechas.UseVisualStyleBackColor = true;
+            this.btnLimpiarFechas.Click += new System.EventHandler(this.btnLimpiarFechas_Click);
             // 
             // dtpHasta
             // 
@@ -126,6 +124,19 @@
             this.dtpHasta.Size = new System.Drawing.Size(139, 23);
             this.dtpHasta.TabIndex = 3;
             this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Checked = false;
+            this.dtpDesde.CustomFormat = "";
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(69, 16);
+            this.dtpDesde.MinDate = new System.DateTime(1844, 1, 1, 0, 0, 0, 0);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(146, 23);
+            this.dtpDesde.TabIndex = 3;
+            this.dtpDesde.Value = new System.DateTime(1844, 2, 27, 0, 0, 0, 0);
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // label2
             // 
@@ -149,18 +160,39 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Desde:";
             // 
-            // dtpDesde
+            // groupBox2
             // 
-            this.dtpDesde.Checked = false;
-            this.dtpDesde.CustomFormat = "";
-            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDesde.Location = new System.Drawing.Point(69, 16);
-            this.dtpDesde.MinDate = new System.DateTime(1844, 1, 1, 0, 0, 0, 0);
-            this.dtpDesde.Name = "dtpDesde";
-            this.dtpDesde.Size = new System.Drawing.Size(146, 23);
-            this.dtpDesde.TabIndex = 3;
-            this.dtpDesde.Value = new System.DateTime(1844, 2, 27, 0, 0, 0, 0);
-            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
+            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
+            this.groupBox2.Controls.Add(this.btnBuscarCliente);
+            this.groupBox2.Controls.Add(this.btnLimpiarCliente);
+            this.groupBox2.Controls.Add(this.lblCliente);
+            this.groupBox2.Controls.Add(this.txtNombreCliente);
+            this.groupBox2.Controls.Add(this.txtIdCliente);
+            this.groupBox2.Location = new System.Drawing.Point(17, 17);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(495, 52);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(359, 14);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(66, 25);
+            this.btnBuscarCliente.TabIndex = 5;
+            this.btnBuscarCliente.Text = "Buscar";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
+            // 
+            // btnLimpiarCliente
+            // 
+            this.btnLimpiarCliente.Location = new System.Drawing.Point(428, 14);
+            this.btnLimpiarCliente.Name = "btnLimpiarCliente";
+            this.btnLimpiarCliente.Size = new System.Drawing.Size(63, 25);
+            this.btnLimpiarCliente.TabIndex = 5;
+            this.btnLimpiarCliente.Text = "Limpiar";
+            this.btnLimpiarCliente.UseVisualStyleBackColor = true;
+            this.btnLimpiarCliente.Click += new System.EventHandler(this.btnLimpiarCliente_Click);
             // 
             // lblCliente
             // 
@@ -173,15 +205,21 @@
             this.lblCliente.TabIndex = 1;
             this.lblCliente.Text = "Cliente:";
             // 
-            // btnConsultar
+            // txtNombreCliente
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(1035, 32);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(94, 29);
-            this.btnConsultar.TabIndex = 0;
-            this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            this.txtNombreCliente.Location = new System.Drawing.Point(170, 15);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.ReadOnly = true;
+            this.txtNombreCliente.Size = new System.Drawing.Size(179, 23);
+            this.txtNombreCliente.TabIndex = 4;
+            // 
+            // txtIdCliente
+            // 
+            this.txtIdCliente.Location = new System.Drawing.Point(94, 15);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.ReadOnly = true;
+            this.txtIdCliente.Size = new System.Drawing.Size(48, 23);
+            this.txtIdCliente.TabIndex = 4;
             // 
             // fACTURASDataGridView
             // 
@@ -220,71 +258,7 @@
             this.fACTURASDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.fACTURASDataGridView.Size = new System.Drawing.Size(1135, 438);
             this.fACTURASDataGridView.TabIndex = 2;
-            // 
-            // fACTURASBindingSource
-            // 
-            this.fACTURASBindingSource.DataSource = this.fACTURACIONDataSet;
-            this.fACTURASBindingSource.Position = 0;
-            // 
-            // fACTURACIONDataSet
-            // 
-            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
-            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // fACTURASTableAdapter
-            // 
-            this.fACTURASTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ARTICULOSTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CATEGORIATableAdapter = null;
-            this.tableAdapterManager.CLIENTESTableAdapter = null;
-            this.tableAdapterManager.CONDICIONESPAGOTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.DETALLE_FACTURATableAdapter = null;
-            this.tableAdapterManager.FACTURASTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.VENDEDORESTableAdapter = null;
-            // 
-            // btnLimpiarFechas
-            // 
-            this.btnLimpiarFechas.Location = new System.Drawing.Point(431, 15);
-            this.btnLimpiarFechas.Name = "btnLimpiarFechas";
-            this.btnLimpiarFechas.Size = new System.Drawing.Size(66, 25);
-            this.btnLimpiarFechas.TabIndex = 5;
-            this.btnLimpiarFechas.Text = "Limpiar";
-            this.btnLimpiarFechas.UseVisualStyleBackColor = true;
-            this.btnLimpiarFechas.Click += new System.EventHandler(this.btnLimpiarFechas_Click);
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox2.BackgroundImage")));
-            this.groupBox2.Controls.Add(this.btnBuscarCliente);
-            this.groupBox2.Controls.Add(this.btnLimpiarCliente);
-            this.groupBox2.Controls.Add(this.lblCliente);
-            this.groupBox2.Controls.Add(this.txtNombreCliente);
-            this.groupBox2.Controls.Add(this.txtIdCliente);
-            this.groupBox2.Location = new System.Drawing.Point(17, 17);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(495, 52);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox3.BackgroundImage")));
-            this.groupBox3.Controls.Add(this.btnLimpiarFechas);
-            this.groupBox3.Controls.Add(this.dtpHasta);
-            this.groupBox3.Controls.Add(this.dtpDesde);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Location = new System.Drawing.Point(522, 18);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(505, 52);
-            this.groupBox3.TabIndex = 3;
-            this.groupBox3.TabStop = false;
+            this.fACTURASDataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.fACTURASDataGridView_CellDoubleClick);
             // 
             // idFactura
             // 
@@ -294,7 +268,7 @@
             this.idFactura.HeaderText = "Id Factura";
             this.idFactura.Name = "idFactura";
             this.idFactura.ReadOnly = true;
-            this.idFactura.Width = 96;
+            this.idFactura.Width = 88;
             // 
             // idVendedor
             // 
@@ -303,7 +277,7 @@
             this.idVendedor.HeaderText = "Id Vendedor";
             this.idVendedor.Name = "idVendedor";
             this.idVendedor.ReadOnly = true;
-            this.idVendedor.Width = 110;
+            this.idVendedor.Width = 101;
             // 
             // nombreVendedor
             // 
@@ -320,7 +294,7 @@
             this.idCliente.HeaderText = "Id Cliente";
             this.idCliente.Name = "idCliente";
             this.idCliente.ReadOnly = true;
-            this.idCliente.Width = 91;
+            this.idCliente.Width = 84;
             // 
             // nombreComercial
             // 
@@ -357,7 +331,34 @@
             this.condicionPago.ReadOnly = true;
             this.condicionPago.Width = 121;
             // 
-            // frmReporteFacturas
+            // fACTURASBindingSource
+            // 
+            this.fACTURASBindingSource.DataSource = this.fACTURACIONDataSet;
+            this.fACTURASBindingSource.Position = 0;
+            // 
+            // fACTURACIONDataSet
+            // 
+            this.fACTURACIONDataSet.DataSetName = "FACTURACIONDataSet";
+            this.fACTURACIONDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // fACTURASTableAdapter
+            // 
+            this.fACTURASTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.ARTICULOSTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CATEGORIATableAdapter = null;
+            this.tableAdapterManager.CLIENTESTableAdapter = null;
+            this.tableAdapterManager.CONDICIONESPAGOTableAdapter = null;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.DETALLE_FACTURATableAdapter = null;
+            this.tableAdapterManager.FACTURASTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.VENDEDORESTableAdapter = null;
+            // 
+            // frmConsultaReporteFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,18 +371,19 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmReporteFacturas";
+            this.Name = "frmConsultaReporteFacturas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reporte Facturas por Cliente";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmConsultaReporteFacturas_FormClosed);
             this.Load += new System.EventHandler(this.frmReporteFacturas_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURASBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fACTURACIONDataSet)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }

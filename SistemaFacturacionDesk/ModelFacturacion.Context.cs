@@ -36,8 +36,12 @@ namespace SistemaFacturacionDesk
         public DbSet<FACTURAS> FACTURAS { get; set; }
         public DbSet<VENDEDORES> VENDEDORES { get; set; }
     
-        public virtual ObjectResult<ObtenerFacturasIdClienteRangoFecha_Result> ObtenerFacturasIdClienteRangoFecha(Nullable<int> idCliente, Nullable<System.DateTime> f_Desde, Nullable<System.DateTime> f_Hasta)
+        public virtual ObjectResult<ObtenerFacturasIdClienteRangoFecha_Result> ObtenerFacturasIdClienteRangoFecha(Nullable<int> idFactura, Nullable<int> idCliente, Nullable<System.DateTime> f_Desde, Nullable<System.DateTime> f_Hasta)
         {
+            var idFacturaParameter = idFactura.HasValue ?
+                new ObjectParameter("IdFactura", idFactura) :
+                new ObjectParameter("IdFactura", typeof(int));
+    
             var idClienteParameter = idCliente.HasValue ?
                 new ObjectParameter("idCliente", idCliente) :
                 new ObjectParameter("idCliente", typeof(int));
@@ -50,7 +54,7 @@ namespace SistemaFacturacionDesk
                 new ObjectParameter("F_Hasta", f_Hasta) :
                 new ObjectParameter("F_Hasta", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerFacturasIdClienteRangoFecha_Result>("ObtenerFacturasIdClienteRangoFecha", idClienteParameter, f_DesdeParameter, f_HastaParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<ObtenerFacturasIdClienteRangoFecha_Result>("ObtenerFacturasIdClienteRangoFecha", idFacturaParameter, idClienteParameter, f_DesdeParameter, f_HastaParameter);
         }
     }
 }

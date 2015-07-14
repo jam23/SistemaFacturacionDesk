@@ -1,4 +1,5 @@
 ﻿
+using SistemaFacturacionDesk.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,13 @@ namespace SistemaFacturacionDesk
             frmCategoria formCategoria = new frmCategoria();
             formCategoria.Visible = true;
             this.Visible = false;
+        }
+
+        private void facturasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            frmConsultaReporteFacturas formReporteFactura = new frmConsultaReporteFacturas();
+            formReporteFactura.Visible = true;
         }
 
       

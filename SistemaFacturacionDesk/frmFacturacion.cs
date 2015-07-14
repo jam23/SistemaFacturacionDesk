@@ -389,6 +389,7 @@ namespace SistemaFacturacionDesk
 
                         foreach (var articuloFacturado in ArticulosFacturados)
                         {
+                            detalleFactura = new DETALLE_FACTURA();
                             detalleFactura.idArticulo = articuloFacturado.Key;
                             detalleFactura.idFactura = factura.id;
                             detalleFactura.precioUnitario = db.ARTICULOS.Find(articuloFacturado.Key).precioUnitario;
