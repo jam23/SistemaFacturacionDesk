@@ -25,7 +25,7 @@ namespace SistemaFacturacionDesk
         }
         private void frmCategoria_Load(object sender, EventArgs e)
         {
-            estadoComboBox.DataSource = Utilidades.Estado;
+            estadoComboBox.DataSource = Utilidades.Estados;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CATEGORIA' table. You can move, or remove it, as needed.
             this.cATEGORIATableAdapter.Fill(this.fACTURACIONDataSet.CATEGORIA);
         }
@@ -58,10 +58,17 @@ namespace SistemaFacturacionDesk
         }
         private void cATEGORIABindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            string mensaje = Utilidades.ObtenerMensajeInsertarModificar(this.cATEGORIABindingSource.Current);
+
             if (ValidarDatosCampos() && this.Validate())
             {
                 this.cATEGORIABindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
+
+                if (!string.IsNullOrEmpty(mensaje))
+                {
+                    this.MensajeInformacion(mensaje);
+                }
             }
         }
 

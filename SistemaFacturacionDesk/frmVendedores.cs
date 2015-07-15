@@ -26,23 +26,19 @@ namespace SistemaFacturacionDesk
 
         private void vENDEDORESBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            string mensaje = Utilidades.ObtenerMensajeInsertarModificar(this.vENDEDORESBindingSource.Current);
+
             if (ValidarDatosCampos() && this.Validate())
             {
                 this.vENDEDORESBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
-                
-                ///TODO: Verificar porque no muestra mensajes.
-                DataRowView currentRow = (DataRowView)(this.vENDEDORESBindingSource.Current);
-                if (currentRow.IsNew)
-                {
-                    this.MensajeInformacion("Articulo Agregado.");
-                }
-                else if (currentRow.IsEdit)
-                {
-                    this.MensajeInformacion("Articulo Modificado.");
-                }
-            }
 
+                if (!string.IsNullOrEmpty(mensaje))
+                {
+                    this.MensajeInformacion(mensaje);
+                }
+
+            }
         }
 
         private bool ValidarDatosCampos()
@@ -117,7 +113,7 @@ namespace SistemaFacturacionDesk
         private void frmVendedores_Load(object sender, EventArgs e)
         {
             ValidarInsertcionDatos();
-            estadoComboBox.DataSource = Utilidades.Estado;
+            estadoComboBox.DataSource = Utilidades.Estados;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.VENDEDORES' table. You can move, or remove it, as needed.
             this.vENDEDORESTableAdapter.Fill(this.fACTURACIONDataSet.VENDEDORES);
 

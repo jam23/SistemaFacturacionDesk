@@ -20,7 +20,7 @@ namespace SistemaFacturacionDesk
         private void frmCondicionesPago_Load(object sender, EventArgs e)
         {
             ValidarInsertcionDatos();
-            estadoComboBox.DataSource = Utilidades.Estado;
+            estadoComboBox.DataSource = Utilidades.Estados;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CONDICIONESPAGO' table. You can move, or remove it, as needed.
             this.cONDICIONESPAGOTableAdapter.Fill(this.fACTURACIONDataSet.CONDICIONESPAGO);
         }
@@ -33,21 +33,18 @@ namespace SistemaFacturacionDesk
 
         private void cONDICIONESPAGOBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            string mensaje = Utilidades.ObtenerMensajeInsertarModificar(this.cONDICIONESPAGOBindingSource.Current);
+
             if (ValidarDatosCampos() && this.Validate())
             {
                 this.cONDICIONESPAGOBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
+               
+                if (!string.IsNullOrEmpty(mensaje))
+                {
+                    this.MensajeInformacion(mensaje);
+                }
 
-                ///TODO: Verificar porque no muestra mensajes.
-                DataRowView currentRow = (DataRowView)(this.cONDICIONESPAGOBindingSource.Current);
-                if (currentRow.IsNew)
-                {
-                    this.MensajeInformacion("Articulo Agregado.");
-                }
-                else if (currentRow.IsEdit)
-                {
-                    this.MensajeInformacion("Articulo Modificado.");
-                }
             }
 
         }
@@ -87,7 +84,7 @@ namespace SistemaFacturacionDesk
                 resultado = false;
                 NombreCampo = "Cantidad de Días";
                 cantidadDiasTextBox.Focus();
-            }           
+            }
             else if (estadoComboBox.SelectedIndex == -1)
             {
                 resultado = false;

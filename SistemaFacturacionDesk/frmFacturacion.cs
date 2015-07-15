@@ -1,4 +1,5 @@
 ﻿using SistemaFacturacionDesk.Busquedas;
+using SistemaFacturacionDesk.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -371,6 +372,7 @@ namespace SistemaFacturacionDesk
         {
             if (ValidatarDatosFactura())
             {
+                frmReporteFactura resource = new frmReporteFactura();
                 try
                 {
                     using (TransactionScope trans = new TransactionScope())
@@ -400,13 +402,13 @@ namespace SistemaFacturacionDesk
                         db.SaveChanges();
                         LimpiarCamposFactura();
                         trans.Complete();
-                     
-                       this.MensajeInformacion(string.Format("Factura registrada. No. {0}", factura.id));
-                        
+
+                        this.MensajeInformacion(string.Format("Factura registrada. No. {0}", factura.id));
+
+                        resource.IdFactura = factura.id;
 
 
                     }
-
                 }
                 catch (Exception)
                 {
@@ -416,6 +418,8 @@ namespace SistemaFacturacionDesk
                 {
 
                 }
+                resource.Visible = true;
+
             }
         }
 
@@ -424,41 +428,12 @@ namespace SistemaFacturacionDesk
             ArticulosFacturados.Clear();
             LimpiarControlesClientes();
             txtPorcentajeDescuento.Text = "0";
-           
             txtVendedor.Text = User.UsuarioLogeado.NombreCompleto;
             idCondicionPagoComboBox.SelectedIndex = -1;
             fechaRegistroDateTimePicker.ResetText();
             comentarioTextBox.Clear();
             RealizarCalculos();
             CargarGridArticulosFacturados();
-          
-            
-          
-
         }
-        /*
- private void LimpiarArticulosFacturados()
-{
-   foreach (var item in ArticulosFacturados)
-   {
-       if (ArticulosFacturados.ContainsKey(item.Key))
-       {
-           db.ARTICULOS.Find(item.Key).stock += ArticulosFacturados[item.Key];
-       }
-   }
-   ArticulosFacturados.Clear();
-   db.SaveChanges();
-}
-
-  protected void btnGuardarFacturar_Click(object sender, EventArgs e)
-{
-
-}
-         
-         
-         
-         
-*/
-       
     }
 }

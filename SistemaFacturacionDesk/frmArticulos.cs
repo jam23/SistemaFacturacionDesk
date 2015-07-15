@@ -41,7 +41,7 @@ namespace SistemaFacturacionDesk
             //Validar que no se permitan ciertas teclas presionadas.
             ValidarInsercionDatos();
 
-            estadoComboBox.DataSource = Utilidades.Estado;
+            estadoComboBox.DataSource = Utilidades.Estados;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CATEGORIA' table. You can move, or remove it, as needed.
             this.cATEGORIATableAdapter.Fill(this.fACTURACIONDataSet.CATEGORIA);
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.ARTICULOS' table. You can move, or remove it, as needed.
@@ -50,8 +50,10 @@ namespace SistemaFacturacionDesk
 
         private void aRTICULOSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            string mensaje = Utilidades.ObtenerMensajeInsertarModificar(this.aRTICULOSBindingSource.Current,"Articulo Insertado.","Articulo Modificado.");
+            
             if (ValidarDatosCampos() && this.Validate())
-            {
+            {                
                 try
                 {
                     this.aRTICULOSBindingSource.EndEdit();
@@ -60,23 +62,16 @@ namespace SistemaFacturacionDesk
                 catch (NoNullAllowedException ex)
                 {
                     this.MensajeAdvertencia("Existen Campos con valores en blanco, favor de verificar. ");
-                }
+                    return;
+                }             
 
-                ///TODO: Verificar porque no muestra mensajes.
-                DataRowView currentRow = (DataRowView)(this.aRTICULOSBindingSource.Current);
-                if (currentRow.IsNew)
+                if (!string.IsNullOrEmpty(mensaje))
                 {
-                    this.MensajeInformacion("Articulo Agregado.");
+                    this.MensajeInformacion(mensaje);
                 }
-                else if (currentRow.IsEdit)
-                {
-                    this.MensajeInformacion("Articulo Modificado.");
-                }
-               
 
             }
         }
-
 
         private void fillByDescripcion_Click(object sender, EventArgs e)
         {
