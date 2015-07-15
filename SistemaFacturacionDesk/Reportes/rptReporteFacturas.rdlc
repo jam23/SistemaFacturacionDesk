@@ -34,7 +34,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Id Articulo</Value>
+                              <Value>Id Artículo</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -418,7 +418,7 @@
   <Width>6.72259in</Width>
   <Page>
     <PageHeader>
-      <Height>7.86404cm</Height>
+      <Height>7.70529cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -995,8 +995,8 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
-          <Top>5.28849cm</Top>
-          <Left>0.32915cm</Left>
+          <Top>4.98134cm</Top>
+          <Left>0.30269cm</Left>
           <Height>2.36389cm</Height>
           <Width>16.41708cm</Width>
           <ZIndex>6</ZIndex>
@@ -1512,6 +1512,7 @@
           </Style>
         </Textbox>
         <Line Name="Line3">
+          <Top>0cm</Top>
           <Left>0.32915cm</Left>
           <Height>0cm</Height>
           <Width>16.44357cm</Width>

@@ -26,10 +26,17 @@ namespace SistemaFacturacionDesk
 
         private void cLIENTESBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            string mensaje = Utilidades.ObtenerMensajeInsertarModificar(this.cLIENTESBindingSource.Current);
+
             if (ValidarDatosCampos() && this.Validate())
             {
                 this.cLIENTESBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
+
+                if (!string.IsNullOrEmpty(mensaje))
+                {
+                    this.MensajeInformacion(mensaje);
+                }
             }
 
         }
@@ -46,7 +53,7 @@ namespace SistemaFacturacionDesk
         private void frmClientes_Load(object sender, EventArgs e)
         {
             ValidarInsercionDatos();
-            estadoComboBox.DataSource = Utilidades.Estado;
+            estadoComboBox.DataSource = Utilidades.Estados;
             // TODO: This line of code loads data into the 'fACTURACIONDataSet.CLIENTES' table. You can move, or remove it, as needed.
             this.cLIENTESTableAdapter.Fill(this.fACTURACIONDataSet.CLIENTES);
 
@@ -54,6 +61,7 @@ namespace SistemaFacturacionDesk
 
         private void fillByNombreRazonCEDRNC(object sender, EventArgs e)
         {
+
             try
             {
                 this.cLIENTESTableAdapter.FillByNombreRazonCEDRNC(this.fACTURACIONDataSet.CLIENTES, txtFilterValue.Text);
@@ -92,6 +100,12 @@ namespace SistemaFacturacionDesk
                 resultado = false;
                 NombreCampo = "RNC/CED";
                 rNC_CEDTextBox.Focus();
+            }
+            else if (rNC_CEDTextBox.Text.Trim().Length == 11 && !Utilidades.ValidaCedula(rNC_CEDTextBox.Text))
+            {
+                this.MensajeAdvertencia("La Cédula insertada no es válida, favor de verificar");
+                resultado = false;
+                return resultado;
             }
             else if (string.IsNullOrEmpty(cuentaContableTextBox.Text))
             {
@@ -137,6 +151,8 @@ namespace SistemaFacturacionDesk
             frmMenu.Visible = true;
             this.Dispose();
         }
+
+
 
     }
 }
