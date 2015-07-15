@@ -426,6 +426,7 @@
           <Property Type="Double" Name="precioUnitarioFacturado" Nullable="true" />
           <Property Type="String" Name="descripcionCategoriaArticulo" Nullable="true" MaxLength="100" />
           <Property Type="Int32" Name="idCategoria" Nullable="true" />
+          <Property Type="Double" Name="importe" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -545,6 +546,7 @@
                 <ScalarProperty Name="precioUnitarioFacturado" ColumnName="precioUnitarioFacturado" />
                 <ScalarProperty Name="descripcionCategoriaArticulo" ColumnName="descripcionCategoriaArticulo" />
                 <ScalarProperty Name="idCategoria" ColumnName="idCategoria" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

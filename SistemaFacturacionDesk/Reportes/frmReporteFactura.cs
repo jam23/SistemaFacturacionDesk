@@ -27,7 +27,7 @@ namespace SistemaFacturacionDesk.Reportes
 
         private void frmReporteFactura_Load(object sender, EventArgs e)
         {
-            IdFactura = 15;
+           
             CargarReporte();
         }
 

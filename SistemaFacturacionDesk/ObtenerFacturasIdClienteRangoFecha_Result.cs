@@ -37,5 +37,6 @@ namespace SistemaFacturacionDesk
         public Nullable<double> precioUnitarioFacturado { get; set; }
         public string descripcionCategoriaArticulo { get; set; }
         public Nullable<int> idCategoria { get; set; }
+        public Nullable<double> importe { get; set; }
     }
 }
