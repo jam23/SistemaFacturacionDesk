@@ -15,8 +15,8 @@ namespace SistemaFacturacionDesk.Reportes
     {
         private EntitiesFACTURACION db = new EntitiesFACTURACION();
         private frmBusquedaCliente formBusquedaCliente = new frmBusquedaCliente();
-        private frmReporteFactura reporteFactura = new frmReporteFactura();
-
+        private frmReporteDetalleFactura reporteFactura = new frmReporteDetalleFactura();
+        private frmReporteFacturas rptFactura = new frmReporteFacturas();
         public frmConsultaReporteFacturas()
         {
             InitializeComponent();
@@ -26,7 +26,7 @@ namespace SistemaFacturacionDesk.Reportes
         {
             fACTURASDataGridView.AutoGenerateColumns = false;
             LimpiarDateTimePicker(new DateTimePicker[] { dtpDesde, dtpHasta });
-            CargarGridView(0, null, null);
+            CargarFacturas(0, null, null);
 
             this.fACTURASTableAdapter.Fill(this.fACTURACIONDataSet.FACTURAS);
         }
@@ -99,10 +99,10 @@ namespace SistemaFacturacionDesk.Reportes
 
             if (!RangoFechaValido()) return;
 
-            CargarGridView(IdCliente, F_Desde, F_Hasta);
+            this.CargarFacturas(IdCliente, F_Desde, F_Hasta);
         }
 
-        private void CargarGridView(int? IdCliente, DateTime? F_Desde, DateTime? F_Hasta)
+        public void CargarFacturas(int? IdCliente, DateTime? F_Desde, DateTime? F_Hasta)
         {
             var facturas = (from f
                             in db.ObtenerFacturasIdClienteRangoFecha(null, IdCliente, F_Desde, F_Hasta)
@@ -116,6 +116,7 @@ namespace SistemaFacturacionDesk.Reportes
                                 f.RNC_CED,
                                 f.condicionPago,
                                 f.fechaRegistroFactura
+                               
                             }
                           ).Distinct().ToList();
             fACTURASDataGridView.DataSource = facturas;
@@ -149,6 +150,16 @@ namespace SistemaFacturacionDesk.Reportes
             frmMenu frmMenu = new frmMenu();
             frmMenu.Visible = true;
             this.Dispose();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            rptFactura.IdCliente = String.IsNullOrEmpty(txtIdCliente.Text) ? 0 : int.Parse(txtIdCliente.Text);
+            rptFactura.F_Desde = string.IsNullOrEmpty(dtpDesde.Text.Trim()) ? null : new System.Nullable<System.DateTime>(DateTime.Parse(dtpDesde.Text));// new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpDesde.Text, typeof(System.DateTime)))));
+            rptFactura.F_Hasta = string.IsNullOrEmpty(dtpHasta.Text.Trim()) ? null : new System.Nullable<System.DateTime>(DateTime.Parse(dtpHasta.Text));//null : new System.Nullable<System.DateTime>(((System.DateTime)(System.Convert.ChangeType(dtpHasta.Text, typeof(System.DateTime)))));
+                      
+            
+            rptFactura.Visible = true;
         }
     }
 }

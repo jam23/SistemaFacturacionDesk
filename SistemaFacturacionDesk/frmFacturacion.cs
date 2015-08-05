@@ -372,7 +372,7 @@ namespace SistemaFacturacionDesk
         {
             if (ValidatarDatosFactura())
             {
-                frmReporteFactura resource = new frmReporteFactura();
+                frmReporteDetalleFactura resource = new frmReporteDetalleFactura();
                 try
                 {
                     using (TransactionScope trans = new TransactionScope())
@@ -434,6 +434,11 @@ namespace SistemaFacturacionDesk
             comentarioTextBox.Clear();
             RealizarCalculos();
             CargarGridArticulosFacturados();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LimpiarCamposFactura();
         }
     }
 }

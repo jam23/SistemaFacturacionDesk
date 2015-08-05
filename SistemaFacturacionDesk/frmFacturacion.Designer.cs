@@ -42,16 +42,17 @@
             System.Windows.Forms.Label iTBISLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label label3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFacturacion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.Label label3;
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.fechaRegistroDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.idCondicionPagoComboBox = new System.Windows.Forms.ComboBox();
             this.cONDICIONESPAGOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.comentarioTextBox = new System.Windows.Forms.TextBox();
+            this.txtVendedor = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnRemoverArticulo = new System.Windows.Forms.Button();
             this.btnAgregarArticulos = new System.Windows.Forms.Button();
@@ -81,7 +82,6 @@
             this.txtITBIS = new System.Windows.Forms.TextBox();
             this.btnGuardarFactura = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtVendedor = new System.Windows.Forms.TextBox();
             telefonoLabel = new System.Windows.Forms.Label();
             nombreComercialLabel = new System.Windows.Forms.Label();
             razonSocialLabel = new System.Windows.Forms.Label();
@@ -254,6 +254,18 @@
             label2.TabIndex = 14;
             label2.Text = "Total:";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = System.Drawing.Color.Transparent;
+            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label3.Location = new System.Drawing.Point(58, 26);
+            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new System.Drawing.Size(83, 17);
+            label3.TabIndex = 20;
+            label3.Text = "Vendedor:";
+            // 
             // groupBox1
             // 
             this.groupBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("groupBox1.BackgroundImage")));
@@ -277,6 +289,7 @@
             // 
             // fechaRegistroDateTimePicker
             // 
+            this.fechaRegistroDateTimePicker.Enabled = false;
             this.fechaRegistroDateTimePicker.Location = new System.Drawing.Point(147, 85);
             this.fechaRegistroDateTimePicker.Name = "fechaRegistroDateTimePicker";
             this.fechaRegistroDateTimePicker.Size = new System.Drawing.Size(781, 23);
@@ -314,6 +327,15 @@
             this.comentarioTextBox.Name = "comentarioTextBox";
             this.comentarioTextBox.Size = new System.Drawing.Size(781, 70);
             this.comentarioTextBox.TabIndex = 15;
+            // 
+            // txtVendedor
+            // 
+            this.txtVendedor.Location = new System.Drawing.Point(147, 24);
+            this.txtVendedor.Margin = new System.Windows.Forms.Padding(4);
+            this.txtVendedor.Name = "txtVendedor";
+            this.txtVendedor.ReadOnly = true;
+            this.txtVendedor.Size = new System.Drawing.Size(504, 23);
+            this.txtVendedor.TabIndex = 21;
             // 
             // groupBox2
             // 
@@ -636,28 +658,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Cancelar Factura";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnGuardarFactura_Click);
-            // 
-            // txtVendedor
-            // 
-            this.txtVendedor.Location = new System.Drawing.Point(147, 24);
-            this.txtVendedor.Margin = new System.Windows.Forms.Padding(4);
-            this.txtVendedor.Name = "txtVendedor";
-            this.txtVendedor.ReadOnly = true;
-            this.txtVendedor.Size = new System.Drawing.Size(504, 23);
-            this.txtVendedor.TabIndex = 21;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = System.Drawing.Color.Transparent;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label3.Location = new System.Drawing.Point(58, 26);
-            label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(83, 17);
-            label3.TabIndex = 20;
-            label3.Text = "Vendedor:";
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // frmFacturacion
             // 

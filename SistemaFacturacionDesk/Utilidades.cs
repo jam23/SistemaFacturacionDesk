@@ -47,7 +47,7 @@ namespace SistemaFacturacionDesk
 
 
         public static List<KeyValuePair<string, string>> Estados = new List<KeyValuePair<string, string>>() { new KeyValuePair<string, string>("A", "Activo"), new KeyValuePair<string, string>("I", "Inactivo") };
-
+        public const string ContrasenaDefecto = "contrasena01";
         #region Validaciones
 
         public static void ValidarContenido(this TextBox textBox, TipoDatos TipoValidacion)

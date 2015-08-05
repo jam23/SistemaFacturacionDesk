@@ -13,6 +13,7 @@ namespace SistemaFacturacionDesk.Cuenta
     public partial class frmIniciarSesion : Form
     {
         EntitiesFACTURACION db = new EntitiesFACTURACION();
+
         public frmIniciarSesion()
         {
             InitializeComponent();
@@ -57,13 +58,24 @@ namespace SistemaFacturacionDesk.Cuenta
                 User.IniciarSesion(vendedor.id);
             }
 
-        
+            if (vendedor.contrasena == Utilidades.ContrasenaDefecto)
+            {
+                this.MensajeAdvertencia("Para poder continuar debe cambiar la contraseña.");
+                frmCambiarContrasena frmCambiarContrasena = new frmCambiarContrasena();
                 this.Visible = false;
-                frmMenu frmMenu = new frmMenu();
-                frmMenu.Visible = true;
-          
+                frmCambiarContrasena.Visible = true;
+                return;
+            }
 
+            this.Visible = false;
+            frmMenu frmMenu = new frmMenu();
+            frmMenu.Visible = true;
 
+        }
+
+        private void frmIniciarSesion_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
 
 

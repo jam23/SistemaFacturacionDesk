@@ -59,6 +59,7 @@
             this.fACTURACIONDataSet = new SistemaFacturacionDesk.FACTURACIONDataSet();
             this.fACTURASTableAdapter = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.FACTURASTableAdapter();
             this.tableAdapterManager = new SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -358,12 +359,23 @@
             this.tableAdapterManager.UpdateOrder = SistemaFacturacionDesk.FACTURACIONDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.VENDEDORESTableAdapter = null;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(929, 579);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(225, 30);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "Generar Reporte";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmConsultaReporteFacturas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::SistemaFacturacionDesk.Properties.Resources.frmBackgroundImage;
             this.ClientSize = new System.Drawing.Size(1174, 631);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.fACTURASDataGridView);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -417,5 +429,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn RNC_CED;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistroFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn condicionPago;
+        private System.Windows.Forms.Button button1;
     }
 }

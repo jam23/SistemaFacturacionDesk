@@ -97,6 +97,12 @@
     <Compile Include="CONDICIONESPAGO.cs">
       <DependentUpon>ModelFacturacion.tt</DependentUpon>
     </Compile>
+    <Compile Include="Cuenta\frmCambiarContrasena.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cuenta\frmCambiarContrasena.Designer.cs">
+      <DependentUpon>frmCambiarContrasena.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cuenta\frmIniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,17 +187,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\frmReporteFacturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frmReporteFacturas.Designer.cs">
+      <DependentUpon>frmReporteFacturas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frmConsultaReporteFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frmConsultaReporteFacturas.Designer.cs">
       <DependentUpon>frmConsultaReporteFacturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\frmReporteFactura.cs">
+    <Compile Include="Reportes\frmReporteDetalleFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\frmReporteFactura.Designer.cs">
-      <DependentUpon>frmReporteFactura.cs</DependentUpon>
+    <Compile Include="Reportes\frmReporteDetalleFactura.Designer.cs">
+      <DependentUpon>frmReporteDetalleFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilidades.cs" />
     <Compile Include="VENDEDORES.cs">
@@ -202,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Busquedas\frmBusquedaCliente.resx">
       <DependentUpon>frmBusquedaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cuenta\frmCambiarContrasena.resx">
+      <DependentUpon>frmCambiarContrasena.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cuenta\frmIniciarSesion.resx">
       <DependentUpon>frmIniciarSesion.cs</DependentUpon>
@@ -237,13 +252,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\frmReporteFacturas.resx">
+      <DependentUpon>frmReporteFacturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rptReporteFacturas.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frmConsultaReporteFacturas.resx">
       <DependentUpon>frmConsultaReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\frmReporteFactura.resx">
-      <DependentUpon>frmReporteFactura.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\frmReporteDetalleFactura.resx">
+      <DependentUpon>frmReporteDetalleFactura.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\rptReporteFacturas.rdlc">
+    <EmbeddedResource Include="Reportes\rptReporteDetalleFacturas.rdlc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
     <EntityDeploy Include="ModelFacturacion.edmx">

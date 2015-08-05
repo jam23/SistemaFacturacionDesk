@@ -11,11 +11,11 @@ using System.Windows.Forms;
 
 namespace SistemaFacturacionDesk.Reportes
 {
-    public partial class frmReporteFactura : Form
+    public partial class frmReporteDetalleFactura : Form
     {
         private EntitiesFACTURACION db = new EntitiesFACTURACION();
         public int IdFactura { get; set; }
-        public frmReporteFactura()
+        public frmReporteDetalleFactura()
         {
             InitializeComponent();
         }   
@@ -33,13 +33,14 @@ namespace SistemaFacturacionDesk.Reportes
 
         private void CargarReporte()
         {
+
             ReportDataSource source = new ReportDataSource();
             source.Name = "FacturaDataset";
             source.Value = db.ObtenerFacturasIdClienteRangoFecha(IdFactura, null, null, null);
             reportViewer1.LocalReport.DataSources.Clear();
             reportViewer1.LocalReport.DataSources.Add(source);
-            reportViewer1.LocalReport.ReportEmbeddedResource = "rptReporteFacturas.rdlc";
-            reportViewer1.LocalReport.ReportPath = @"Reportes/rptReporteFacturas.rdlc";
+            reportViewer1.LocalReport.ReportEmbeddedResource = "rptReporteDetalleFacturas.rdlc";
+            reportViewer1.LocalReport.ReportPath = @"Reportes/rptReporteDetalleFacturas.rdlc";
             reportViewer1.LocalReport.Refresh();
             
             this.reportViewer1.RefreshReport();

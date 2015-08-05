@@ -24,11 +24,12 @@ namespace SistemaFacturacionDesk
             this.Dispose();
         }
 
+        
         private void vENDEDORESBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             string mensaje = Utilidades.ObtenerMensajeInsertarModificar(this.vENDEDORESBindingSource.Current);
 
-            if (ValidarDatosCampos() && this.Validate())
+            if (ValidarDatosCampos())
             {
                 this.vENDEDORESBindingSource.EndEdit();
                 this.tableAdapterManager.UpdateAll(this.fACTURACIONDataSet);
@@ -45,6 +46,13 @@ namespace SistemaFacturacionDesk
         {
             bool resultado = true;
             string NombreCampo = "";
+
+            if (!this.Validate())
+            {
+                resultado = false;
+            }
+
+
             if (string.IsNullOrEmpty(nombresTextBox.Text))
             {
                 resultado = false;
@@ -95,7 +103,18 @@ namespace SistemaFacturacionDesk
                 contrasenaTextBox.Focus();
             }
 
-            if (!resultado) this.MensajeAdvertencia("El campo " + NombreCampo + " no puede estar en blanco.", "Datos en Blanco");
+            if (!resultado)
+            {
+                if (!string.IsNullOrEmpty(NombreCampo))
+                {
+                    this.MensajeAdvertencia("El campo " + NombreCampo + " no puede estar en blanco.", "Datos en Blanco");
+                }
+                else
+                {
+                    this.MensajeAdvertencia("Ocurrió algún error, favor de verificar.");
+                }
+            }
+
 
             return resultado;
         }
@@ -107,7 +126,7 @@ namespace SistemaFacturacionDesk
             apellido2TextBox.ValidarContenido(TipoDatos.Alfanumerico);
             porcientoComisionTextBox.ValidarContenido(TipoDatos.Numerico);
             nombreUsuarioTextBox.ValidarContenido(TipoDatos.Alfanumerico);
-            
+
         }
 
         private void frmVendedores_Load(object sender, EventArgs e)

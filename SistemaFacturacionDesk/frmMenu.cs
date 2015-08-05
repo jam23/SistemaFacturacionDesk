@@ -21,6 +21,14 @@ namespace SistemaFacturacionDesk
 
         private void frmMenu_Load(object sender, EventArgs e)
         {
+            if (User.UsuarioLogeado == null)
+            {
+                Cuenta.frmIniciarSesion frmIniciarSesion = new Cuenta.frmIniciarSesion();
+                frmIniciarSesion.Visible = true;
+                this.Dispose();
+            }
+
+
             if (!User.UsuarioLogeado.IsAdmin)
             {
                 gbMantenimientos.Visible = false;
@@ -32,11 +40,12 @@ namespace SistemaFacturacionDesk
             Utilidades.PrevenirUsuarioCerrarVentana(e);
         }
 
-       
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            User.CerrarSesion();
+            Cuenta.frmIniciarSesion frmIniciarSesion = new Cuenta.frmIniciarSesion();
+            frmIniciarSesion.Visible = true;
+            this.Dispose();
         }
 
         private void btnArticulos_Click(object sender, EventArgs e)
@@ -86,6 +95,13 @@ namespace SistemaFacturacionDesk
             this.Visible = false;
             frmConsultaReporteFacturas formReporteFactura = new frmConsultaReporteFacturas();
             formReporteFactura.Visible = true;
+        }
+
+        private void cambiarContraseñaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Visible = false;
+            Cuenta.frmCambiarContrasena frmCambiarContrasena = new Cuenta.frmCambiarContrasena();
+            frmCambiarContrasena.Visible = true;
         }
 
       

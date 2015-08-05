@@ -39,6 +39,12 @@ namespace SistemaFacturacionDesk
                 }
             }
         }
+
+        public static void CerrarSesion()
+        {
+            instance = null;
+        }
+
         #endregion
 
         public int IdUsuario;

@@ -80,7 +80,6 @@
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.Size = new System.Drawing.Size(163, 23);
             this.txtNombreUsuario.TabIndex = 3;
-            this.txtNombreUsuario.Text = "jacosta";
             // 
             // txtContrasena
             // 
@@ -89,7 +88,6 @@
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.Size = new System.Drawing.Size(163, 23);
             this.txtContrasena.TabIndex = 5;
-            this.txtContrasena.Text = "contrasena01";
             this.txtContrasena.UseSystemPasswordChar = true;
             // 
             // lblContrasena
@@ -128,6 +126,7 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Iniciar Sesión";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmIniciarSesion_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
